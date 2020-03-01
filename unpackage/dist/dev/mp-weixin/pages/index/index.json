@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "c-swiper": "/components/c-swiper",
+    "c-search": "/components/c-search",
+    "c-bottom-bar": "/components/c-bottomBar",
+    "c-side-bar": "/components/c-sideBar"
+  }
+}
