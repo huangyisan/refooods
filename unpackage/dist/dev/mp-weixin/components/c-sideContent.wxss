@@ -1,0 +1,12 @@
+
+.side-content-wrapper {
+	position: absolute;
+	display: inline-block;
+	background-color: #007AFF;
+	-webkit-box-flex: 4;
+	-webkit-flex: 4;
+	        flex: 4;
+	right:0;
+	top:0;
+}
+

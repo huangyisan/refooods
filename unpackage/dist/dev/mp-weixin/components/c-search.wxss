@@ -1,5 +1,11 @@
 
-.text {
+.search {
+	display: inline-block;
+	line-height: 44rpx;
+	height: 44rpx;
+	text-align: center;
 	background-color: #4CD964;
+	border-bottom: solid 2px #f77;
+	width: 100%;
 }
 

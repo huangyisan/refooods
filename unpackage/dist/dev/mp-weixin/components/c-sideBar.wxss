@@ -1,12 +1,19 @@
 
 .side-bar-wrapper {
 	position: absolute;
-	width: 35%;
-	height: 100%;
-	bottom: 88rpx;
+	display: inline-block;
+	width: 30%;
 	/* height: 100%; */
+	bottom: 88rpx;
+	height: 100%;
 	background-color: #F0AD4E;
-	text-align: center;
-	overflow: scroll;
+	/* text-align: center; */
+	left:0;
+	top:0;
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	        flex:1;
+	/* bottom:88rpx */
+	z-index: 9;
 }
 
