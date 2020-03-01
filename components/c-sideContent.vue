@@ -20,10 +20,12 @@
 .side-content-wrapper {
 	position: absolute;
 	display: inline-block;
-	background-color: #007AFF;
+	background-color: #829fff;
 	flex: 4;
 	right:0;
 	top:0;
+	width:70%;
+	height: 100%;
 	
 }
 </style>

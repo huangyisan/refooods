@@ -2,11 +2,13 @@
 .side-content-wrapper {
 	position: absolute;
 	display: inline-block;
-	background-color: #007AFF;
+	background-color: #829fff;
 	-webkit-box-flex: 4;
 	-webkit-flex: 4;
 	        flex: 4;
 	right:0;
 	top:0;
+	width:70%;
+	height: 100%;
 }
 

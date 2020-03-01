@@ -19,7 +19,7 @@
 <style>
 .side-bar-wrapper {
 	position: absolute;
-	display: inline-block;
+	/* display: inline-block; */
 	width: 30%;
 	/* height: 100%; */
 	bottom: 88rpx;
@@ -30,7 +30,7 @@
 	top:0;
 	flex:1;
 	/* bottom:88rpx */
-	z-index: 9;
+	/* z-index: 9; */
 	
 	
 }

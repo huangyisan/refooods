@@ -17,8 +17,8 @@
 <style>
 .search {
 	display: inline-block;
-	line-height: 44rpx;
-	height: 44rpx;
+	line-height: 50rpx;
+	height: 50rpx;
 	text-align: center;
 	background-color: #4CD964;
 	border-bottom: solid 2px #f77;

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "uni-app",
+  "navigationBarTitleText": "点餐小程序",
   "usingComponents": {
     "c-swiper": "/components/c-swiper",
     "c-search": "/components/c-search",

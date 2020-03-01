@@ -3,8 +3,8 @@
 		<c-swiper></c-swiper>
 		<c-search></c-search>
 		<view class='nav'>
-			<!-- <c-side-bar></c-side-bar> -->
-			<!-- <c-side-content></c-side-content> -->
+			<c-side-bar></c-side-bar>
+			<c-side-content></c-side-content>
 		</view>
 
 
@@ -48,16 +48,18 @@
 	/* 总体盒子 */
 	.content {
 		display: flex;
-		/* position: relative; */
+		position: absolute;
 		/* direction: row; */
 		flex-direction: column;
 		/* align-items: center; */
 		/* justify-content: center; */
 		/* position: relative; */
 		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
+		top:0;
+		bottom:0;
+		/* left: 0; */
+		/* top: 0; */
+		background-color: #007AFF;
 	}
 
 	.bottom-bar {
@@ -67,11 +69,12 @@
 	}
 
 	.nav {
-		position: relative;
+		position: absolute;
 		display: flex;
 		background-color: #333333;
 		width: 100%;
-		height: 200rpx;
+		top: 350rpx;
+		bottom: 88rpx;
 		/* bottom: 88rpx; */
 	}
 </style>
