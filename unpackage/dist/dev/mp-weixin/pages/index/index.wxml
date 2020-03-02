@@ -1,1 +1,1 @@
-<view class="content"><c-swiper vue-id="1" bind:__l="__l"></c-swiper><c-search vue-id="2" bind:__l="__l"></c-search><view class="nav"><c-side-bar vue-id="3" bind:__l="__l"></c-side-bar><c-side-content vue-id="4" bind:__l="__l"></c-side-content></view><c-bottom-bar class="bottom-bar" vue-id="5" bind:__l="__l"></c-bottom-bar></view>
+<view class="content"><c-swiper vue-id="1" bind:__l="__l"></c-swiper><c-search vue-id="2" bind:__l="__l"></c-search><c-foods-list vue-id="3" bind:__l="__l"></c-foods-list><c-bottom-bar vue-id="4" bind:__l="__l"></c-bottom-bar></view>

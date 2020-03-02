@@ -1,10 +1,9 @@
 {
   "navigationBarTitleText": "点餐小程序",
   "usingComponents": {
-    "c-swiper": "/components/c-swiper",
-    "c-search": "/components/c-search",
-    "c-bottom-bar": "/components/c-bottomBar",
-    "c-side-bar": "/components/c-sideBar",
-    "c-side-content": "/components/c-sideContent"
+    "c-swiper": "/pages/index/c-swiper",
+    "c-search": "/pages/index/c-search",
+    "c-foods-list": "/pages/index/c-foodsList",
+    "c-bottom-bar": "/pages/index/c-bottomBar"
   }
 }

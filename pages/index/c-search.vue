@@ -1,6 +1,6 @@
 <template>
-	<view>
-		<text class='search'>搜索功能</text>
+	<view class='search-wrapper'>
+		<text>搜索功能</text>
 	</view>
 </template>
 
@@ -15,8 +15,9 @@
 </script>
 
 <style>
-.search {
-	display: inline-block;
+.search-wrapper {
+	/* 暂时给一个inline-block属性，后面要继续调整 */
+	/* display: inline-block; */
 	line-height: 50rpx;
 	height: 50rpx;
 	text-align: center;

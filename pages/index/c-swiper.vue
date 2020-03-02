@@ -26,7 +26,7 @@
 	}
 </script>
 
-<style>
+<style scrop>
 	.swiper-wrapper {
 		/* swiper 存在默认高度为150px */
 		height: 300rpx;

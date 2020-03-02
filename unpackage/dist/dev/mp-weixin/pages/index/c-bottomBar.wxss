@@ -7,6 +7,9 @@
 	height: 88rpx;
 	line-height: 88rpx;
 	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 .item-left {
 	background-color: #007AFF;
@@ -21,4 +24,5 @@
 	-webkit-flex: 1;
 	        flex: 1;
 }
+
 

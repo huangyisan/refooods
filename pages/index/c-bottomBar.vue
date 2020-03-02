@@ -9,7 +9,7 @@
 	</view>
 </template>
 
-<script>
+<script scrop>
 	export default {
 		data() {
 			return {
@@ -26,6 +26,9 @@
 		height: 88rpx;
 		line-height: 88rpx;
 		text-align: center;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
 		
 	}
 
@@ -39,4 +42,5 @@
 		/* position: relative; */
 		flex: 1;
 	}
+
 </style>

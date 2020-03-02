@@ -6,14 +6,6 @@
 				"navigationBarTitleText": "点餐小程序"
 			}
 		}
-		// {
-  //           "path" : "components/c-swiper",
-  //           "style" : {}
-  //       },
-		// {
-		//     "path" : "pages/profile/profile",
-		//     "style" : {}
-		// }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
