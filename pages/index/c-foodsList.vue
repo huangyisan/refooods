@@ -2,7 +2,7 @@
 	<view class='foods-wrapper'>
 		
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
-			<block v-for='item in foodsInfo'>
+			<block v-for='item in foodsInfo' :key='item.category'>
 <view class='side-left-item'>{{item.category}}</view>
 			<!-- <view class='side-left-item'>2</view>
 			<view class='side-left-item'>3</view>
@@ -17,8 +17,8 @@
 	
 
 		<scroll-view scroll-y="true" class='side-right-wrapper'>
-			<block v-for='item in foodsInfo'>
-				<block v-for='item in item.detail'>
+			<block v-for='item in foodsInfo' :key='item.detail'>
+				<block v-for='item in item.detail' :key='item.index'>
 			<view class='side-right-item'>{{item}}</view>
 <!-- 			<view class='side-right-item'>2</view>
 			<view class='side-right-item'>3</view>
