@@ -4,7 +4,6 @@
 		<c-search></c-search>
 		<c-foods-list></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
-
 	</view>
 </template>
 

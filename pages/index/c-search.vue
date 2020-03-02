@@ -22,7 +22,7 @@
 	height: 50rpx;
 	text-align: center;
 	background-color: #4CD964;
-	border-bottom: solid 2px #f77;
+	/* border-bottom: solid 2px #f77; */
 	width: 100%;
 }
 </style>

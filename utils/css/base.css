@@ -1,18 +1,10 @@
 .content {
 	display: flex;
-	/* position: absolute; */
-	/* direction: row; */
 	flex-direction: column;
-	/* flex-wrap: wrap; */
-	/* align-items: center; */
-	/* justify-content: center; */
-	/* position: relative; */
 	width: 100%;
-	height: 100%;
-	/* align-content: flex-start; */
-	/* top: 0; */
-	/* bottom: 0; */
-	/* left: 0; */
-	/* top: 0; */
 	background-color: #007AFF;
+	/* 视口高度100 */
+	height: 100vh;
+	/* 子绝父相，有利于子元素定位 */
+	position: relative;
 }
