@@ -116,6 +116,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -144,7 +145,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+var _default2 =
+{
+  props: {
+    'foodsInfo': {
+      type: Array,
+      default: function _default() {
+        return [];
+      } } },
 
+
+  data: function data() {
+    return {};
+
+
+  } };exports.default = _default2;
 
 /***/ }),
 

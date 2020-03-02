@@ -11,14 +11,16 @@
 	bottom: 0;
 	width: 100%;
 }
-.item-left {
-	background-color: #007AFF;
+.bottom-item-left {
+	background-color: #575757;
+	/* background-color: #000; */
+	/* opacity:0.3; */
 	-webkit-box-flex: 3;
 	-webkit-flex: 3;
-	        flex: 3
+	        flex: 3;
 }
-.item-right {
-	background-color: #F88000;
+.bottom-item-right {
+	background-color: #686868;
 	/* position: relative; */
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;

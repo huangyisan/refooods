@@ -2,7 +2,7 @@
 	<view class="content">
 		<c-swiper :imgList='imgList'></c-swiper>
 		<c-search></c-search>
-		<c-foods-list></c-foods-list>
+		<c-foods-list :foodsInfo='foodsInfo'></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
 	</view>
 </template>
@@ -26,9 +26,17 @@
 					{
 						'imgUrl': "../../static/img/swiper-03.jpg"
 					}
+				],
+				foodsInfo: [
+					{
+						'category': '荤菜',
+						'detail': ['猪肉','羊肉','牛肉']
+					},
+					{
+						'category': '蔬菜',
+						'detail': ['青菜','白菜','西红柿','土豆']
+					}
 				]
-
-
 		}
 	},
 	components: {

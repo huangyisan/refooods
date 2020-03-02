@@ -26,7 +26,7 @@
 	        flex: 3;
 }
 .side-left-item.data-v-5139fe99 {
-	background: #fff;
+	background: #f8f8f8;
 	/*每个高30px*/
 	height: 80rpx;
 	/*垂直居中*/
@@ -34,7 +34,7 @@
 	/*再设上下padding增加高度，总高42px*/
 	padding: 15rpx 0;
 	/*只设下边线*/
-	border-bottom: 1px solid #dedede;
+	/* border-bottom: 1px solid #dedede; */
 	/*文字14px*/
 	font-size: 29rpx;
 	color: #101010;
@@ -48,7 +48,7 @@
 	/*再设上下padding增加高度，总高42px*/
 	padding: 15rpx 0;
 	/*只设下边线*/
-	border-bottom: 1px solid #de5cd1;
+	/* border-bottom: 1px solid #de5cd1; */
 	/*文字14px*/
 	font-size: 29rpx;
 	color: #101010;

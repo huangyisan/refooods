@@ -1,9 +1,9 @@
 <template>
 	<view class='bottom-wrapper'>
-		<view class="item-left">
+		<view class="bottom-item-left">
 			<text>点菜情况</text>
 		</view>
-		<view class="item-right">
+		<view class="bottom-item-right">
 			<text>下单</text>
 		</view>
 	</view>
@@ -32,13 +32,18 @@
 		
 	}
 
-	.item-left {
-		background-color: #007AFF;
-		flex: 3
+	.bottom-item-left {
+		background-color: #575757;
+		/* background-color: #000; */
+		/* opacity:0.3; */
+		flex: 3;
 		
+
 	}
-	.item-right {
-		background-color: #F88000;
+
+	
+	.bottom-item-right {
+		background-color: #686868;
 		/* position: relative; */
 		flex: 1;
 	}

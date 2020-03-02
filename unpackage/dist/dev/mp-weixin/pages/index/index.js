@@ -168,9 +168,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         'imgUrl': "../../static/img/swiper-02.jpg" },
 
       {
-        'imgUrl': "../../static/img/swiper-03.jpg" }] };
+        'imgUrl': "../../static/img/swiper-03.jpg" }],
 
 
+      foodsInfo: [
+      {
+        'category': '荤菜',
+        'detail': ['猪肉', '羊肉', '牛肉'] },
+
+      {
+        'category': '蔬菜',
+        'detail': ['青菜', '白菜', '西红柿', '土豆'] }] };
 
 
 
