@@ -7611,9 +7611,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!**********************************************************!*\
-  !*** /Users/huangyisan/Desktop/github/fooods/pages.json ***!
-  \**********************************************************/
+/*!**************************************************************!*\
+  !*** /Users/huangyisan/Desktop/github/hys/fooods/pages.json ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8518,20 +8518,20 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 
 /***/ }),
 /* 7 */
-/*!***************************************************************************!*\
-  !*** /Users/huangyisan/Desktop/github/fooods/pages.json?{"type":"style"} ***!
-  \***************************************************************************/
+/*!*******************************************************************************!*\
+  !*** /Users/huangyisan/Desktop/github/hys/fooods/pages.json?{"type":"style"} ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "点餐小程序", "usingComponents": { "c-swiper": "/components/c-swiper", "c-search": "/components/c-search", "c-bottom-bar": "/components/c-bottomBar", "c-side-bar": "/components/c-sideBar", "c-side-content": "/components/c-sideContent" }, "usingAutoImportComponents": {} }, "pages/profile/profile": { "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "点餐小程序" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
-/*!**************************************************************************!*\
-  !*** /Users/huangyisan/Desktop/github/fooods/pages.json?{"type":"stat"} ***!
-  \**************************************************************************/
+/*!******************************************************************************!*\
+  !*** /Users/huangyisan/Desktop/github/hys/fooods/pages.json?{"type":"stat"} ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
