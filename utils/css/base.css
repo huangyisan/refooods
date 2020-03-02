@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	background-color: #007AFF;
+	/* background-color: #007AFF; */
 	/* 视口高度100 */
 	height: 100vh;
 	/* 子绝父相，有利于子元素定位 */

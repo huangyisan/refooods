@@ -8,19 +8,19 @@
 	-webkit-flex-direction: row;
 	        flex-direction: row;
 	position: absolute;
-	background-color: #C03189;
+	/* background-color: #C03189; */
 	width: 100%;
 	top: 350rpx;
 	bottom: 88rpx;
 }
 .side-left-wrapper.data-v-5139fe99 {
-	background-color: #F0AD4E;
+	/* background-color: #F0AD4E; */
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	        flex: 1;
 }
 .side-right-wrapper.data-v-5139fe99 {
-	background-color: #829fff;
+	/* background-color: #829fff; */
 	-webkit-box-flex: 3;
 	-webkit-flex: 3;
 	        flex: 3;

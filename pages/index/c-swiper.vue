@@ -8,9 +8,9 @@
 		:circular="true"
 		>
 			<swiper-item v-for='item in imgList' :key='item.imgUrl'>
-				<view class="swiper-item">
-					<img :src='item.imgUrl' alt="">
-				</view>
+				<!-- <view class="swiper-item"> -->
+					<img :src='item.imgUrl' alt="" class='swiper-img'>
+				<!-- </view> -->
 			</swiper-item>
 		</swiper>
 	</view>
@@ -44,14 +44,17 @@
 		/* height: 300rpx; */
 	}
 
-	.swiper-item {
+	swiper-item {
 		text-align: center;
 		/* background-color: #007AFF; */
 		/* height: 150rpx; */
 		/* width: 100%; */
+		height: 300rpx;
 	}
 	
-	.swiper-item img {
-		width:100%
+	.swiper-img {
+		width:100%;
+		/* height: 300rpx */
+		height: 100%;
 	}
 </style>

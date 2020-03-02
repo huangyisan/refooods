@@ -10,7 +10,7 @@
 			<view class='side-left-item'>7</view>
 			<view class='side-left-item'>8</view>
 			<view class='side-left-item'>9</view>
-		</scroll-view>
+	</scroll-view>
 
 		<scroll-view scroll-y="true" class='side-right-wrapper'>
 			<view class='side-right-item'>1</view>
@@ -35,20 +35,20 @@
 		display: flex;
 		flex-direction: row;
 		position: absolute;
-		background-color: #C03189;
+		/* background-color: #C03189; */
 		width: 100%;
 		top: 350rpx;
 		bottom: 88rpx;
 	}
 
 	.side-left-wrapper {
-		background-color: #F0AD4E;
+		/* background-color: #F0AD4E; */
 		flex: 1;
 
 	}
 
 	.side-right-wrapper {
-		background-color: #829fff;
+		/* background-color: #829fff; */
 		flex: 3;
 	}
 
