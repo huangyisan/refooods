@@ -5,9 +5,13 @@
 	/* swiper 存在默认高度为150px */
 	/* height: 300rpx; */
 }
-swiper-item.data-v-0b05ea62 {
-	background-color: #007AFF;
-	/* height: 150rpx; */ 
-	width: 100%;
+.swiper-item.data-v-0b05ea62 {
+	text-align: center;
+	/* background-color: #007AFF; */
+	/* height: 150rpx; */
+	/* width: 100%; */
+}
+.swiper-item ._img.data-v-0b05ea62 {
+	width:100%
 }
 

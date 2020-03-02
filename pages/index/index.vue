@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<c-swiper></c-swiper>
+		<c-swiper :imgList='imgList'></c-swiper>
 		<c-search></c-search>
 		<c-foods-list></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
@@ -17,10 +17,21 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
-			}
-		},
-		components: {
+				imgList: [{
+						'imgUrl': "../../static/img/swiper-01.jpg"
+					},
+					{
+						'imgUrl': "../../static/img/swiper-02.jpg"
+					},
+					{
+						'imgUrl': "../../static/img/swiper-03.jpg"
+					}
+				]
+
+
+		}
+	},
+	components: {
 			cSwiper,
 			cSearch,
 			cFoodsList,
@@ -37,7 +48,4 @@
 
 <style>
 	@import '../../utils/css/base.css';
-
-
-
 </style>

@@ -142,7 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var cSwiper = function cSwiper() {return __webpack_require__.e(/*! import() | pages/index/c-swiper */ "pages/index/c-swiper").then(__webpack_require__.bind(null, /*! ./c-swiper.vue */ 23));};var cSearch = function cSearch() {return __webpack_require__.e(/*! import() | pages/index/c-search */ "pages/index/c-search").then(__webpack_require__.bind(null, /*! ./c-search.vue */ 30));};var cFoodsList = function cFoodsList() {return __webpack_require__.e(/*! import() | pages/index/c-foodsList */ "pages/index/c-foodsList").then(__webpack_require__.bind(null, /*! ./c-foodsList.vue */ 37));};var cBottomBar = function cBottomBar() {return __webpack_require__.e(/*! import() | pages/index/c-bottomBar */ "pages/index/c-bottomBar").then(__webpack_require__.bind(null, /*! ./c-bottomBar.vue */ 44));};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var cSwiper = function cSwiper() {return __webpack_require__.e(/*! import() | pages/index/c-swiper */ "pages/index/c-swiper").then(__webpack_require__.bind(null, /*! ./c-swiper.vue */ 23));};var cSearch = function cSearch() {return __webpack_require__.e(/*! import() | pages/index/c-search */ "pages/index/c-search").then(__webpack_require__.bind(null, /*! ./c-search.vue */ 30));};var cFoodsList = function cFoodsList() {return __webpack_require__.e(/*! import() | pages/index/c-foodsList */ "pages/index/c-foodsList").then(__webpack_require__.bind(null, /*! ./c-foodsList.vue */ 60));};var cBottomBar = function cBottomBar() {return __webpack_require__.e(/*! import() | pages/index/c-bottomBar */ "pages/index/c-bottomBar").then(__webpack_require__.bind(null, /*! ./c-bottomBar.vue */ 37));};var _default =
 
 
 
@@ -161,7 +161,18 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 {
   data: function data() {
     return {
-      title: 'Hello' };
+      imgList: [{
+        'imgUrl': "../../static/img/swiper-01.jpg" },
+
+      {
+        'imgUrl': "../../static/img/swiper-02.jpg" },
+
+      {
+        'imgUrl': "../../static/img/swiper-03.jpg" }] };
+
+
+
+
 
   },
   components: {
