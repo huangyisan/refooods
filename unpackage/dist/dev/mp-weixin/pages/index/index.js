@@ -142,7 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var cSwiper = function cSwiper() {return __webpack_require__.e(/*! import() | pages/index/c-swiper */ "pages/index/c-swiper").then(__webpack_require__.bind(null, /*! ./c-swiper.vue */ 23));};var cSearch = function cSearch() {return __webpack_require__.e(/*! import() | pages/index/c-search */ "pages/index/c-search").then(__webpack_require__.bind(null, /*! ./c-search.vue */ 30));};var cFoodsList = function cFoodsList() {return __webpack_require__.e(/*! import() | pages/index/c-foodsList */ "pages/index/c-foodsList").then(__webpack_require__.bind(null, /*! ./c-foodsList.vue */ 37));};var cBottomBar = function cBottomBar() {return __webpack_require__.e(/*! import() | pages/index/c-bottomBar */ "pages/index/c-bottomBar").then(__webpack_require__.bind(null, /*! ./c-bottomBar.vue */ 44));};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var cSwiper = function cSwiper() {return __webpack_require__.e(/*! import() | pages/index/c-swiper */ "pages/index/c-swiper").then(__webpack_require__.bind(null, /*! ./c-swiper.vue */ 23));};var cSearch = function cSearch() {return __webpack_require__.e(/*! import() | pages/index/c-search */ "pages/index/c-search").then(__webpack_require__.bind(null, /*! ./c-search.vue */ 30));};var cFoodsList = function cFoodsList() {return __webpack_require__.e(/*! import() | pages/index/c-foodsList */ "pages/index/c-foodsList").then(__webpack_require__.bind(null, /*! ./c-foodsList.vue */ 60));};var cBottomBar = function cBottomBar() {return __webpack_require__.e(/*! import() | pages/index/c-bottomBar */ "pages/index/c-bottomBar").then(__webpack_require__.bind(null, /*! ./c-bottomBar.vue */ 37));};var _default =
 
 
 
@@ -174,11 +174,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       foodsInfo: [
       {
         'category': '荤菜',
-        'detail': ['猪肉', '羊肉', '牛肉'] },
+        'detail': ['猪肉', '羊肉', '牛肉', '鸡肉', '狗肉'] },
 
       {
         'category': '蔬菜',
-        'detail': ['青菜', '白菜', '西红柿', '土豆'] }] };
+        'detail': ['青菜', '白菜', '西红柿', '土豆', '冬瓜'] },
+
+      {
+        'category': '水果',
+        'detail': ['西瓜', '香蕉', '橘子', '菠萝', '桃子'] }] };
 
 
 
