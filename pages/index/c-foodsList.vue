@@ -2,11 +2,11 @@
 	<view class='foods-wrapper'>
 
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
-			<block v-for='(item,index) in foodsInfo' :key='item.category' >
+			<block v-for='(item,index) in foodsInfo' :key='item.category'>
 				<view class='side-left-item' @click="itemClick(index)" :class="{active: index === currentIndex}">
-				<text>{{item.category}}</text>
+					<text>{{item.category}}</text>
 				</view>
-<!-- 				<view class='side-left-item'>2</view>
+				<!-- 				<view class='side-left-item'>2</view>
 			<view class='side-left-item'>3</view>
 			<view class='side-left-item'>4</view>
 			<view class='side-left-item'>5</view>
@@ -19,26 +19,27 @@
 
 
 		<scroll-view scroll-y="true" class='side-right-wrapper'>
-			<view class='test'>11</view>
-			<block v-for='item in foodsInfo' :key='item.detail'>
-				<block v-for='item in item.detail' :key='item.index'>
-					<view class='side-right-item'>{{item}}</view>
-					<!-- 			<view class='side-right-item'>2</view>
-			<view class='side-right-item'>3</view>
-			<view class='side-right-item'>4</view>
-			<view class='side-right-item'>5</view>
-			<view class='side-right-item'>6</view>
-			<view class='side-right-item'>7</view>
-			<view class='side-right-item'>8</view>
-			<view class='side-right-item'>9</view> -->
-				</block>
+			<block>
+				<view class="vegetables">
+					<food-item :foods="vegetables"></food-item>
+				</view>
+			</block>
+			<block>
+				<view class="fruit">
+					<food-item :foods="fruit"></food-item>
+				</view>
 			</block>
 		</scroll-view>
 	</view>
 </template>
 
 <script>
+	import foodItem from '../../components/foodItem.vue'
+
 	export default {
+		components: {
+			foodItem
+		},
 		props: {
 			'foodsInfo': {
 				type: Array,
@@ -50,27 +51,35 @@
 		data() {
 			return {
 				currentIndex: 0,
-				toprpx: []
+				toprpx: [],
+				vegetables: {
+					'category': '蔬菜',
+					'detail': ['青菜', '白菜', '西红柿', '土豆', '冬瓜']
+				},
+				fruit: {
+					'category': '水果',
+					'detail': ['西瓜', '香蕉', '橘子', '菠萝', '桃子']
+				}
 			};
 		},
-		methods:{
-			itemClick(index) {
-				// console.log(this.getToprpx('.test'))
-				console.log(this.toprpx)
-				this.currentIndex = index
-			
-			},
-			getToprpx(selector){
-				let view = this.createSelectorQuery().select(selector)
-				view.boundingClientRect(data => {
-					this.toprpx = data.top
-				}).exec();
+		methods: {
+			// itemClick(index) {
+			// 	// console.log(this.getToprpx('.test'))
+			// 	console.log(this.toprpx)
+			// 	this.currentIndex = index
 
-		},
-		
-		onReady() {
-				this.toprpx.push(this.getToprpx('.test'))
-				}
+			// },
+			// getToprpx(selector) {
+			// 	let view = this.createSelectorQuery().select(selector)
+			// 	view.boundingClientRect(data => {
+			// 		this.toprpx = data.top
+			// 	}).exec();
+
+			// },
+
+			// onReady() {
+			// 	this.toprpx.push(this.getToprpx('.test'))
+			// }
 		}
 	}
 </script>
@@ -127,16 +136,17 @@
 		font-size: 29rpx;
 		color: #101010;
 	}
-	
+
 	.active {
 		color: red;
 		background-color: #FFFFFF;
 	}
+
 	.mytext {
 		display: inline-block;
 		background-color: #007AFF;
 	}
-	
+
 	.side-left-item:active {
 		color: red
 	}
