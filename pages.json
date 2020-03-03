@@ -3,7 +3,8 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "点餐小程序"
+				"navigationBarTitleText": "点餐小程序",
+				"enablePullDownRefresh": false
 			}
 		}
     ],

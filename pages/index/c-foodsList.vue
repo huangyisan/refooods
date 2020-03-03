@@ -3,10 +3,10 @@
 
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
 			<block v-for='(item,index) in foodsInfo' :key='item.category' >
-				<view class='side-left-item' @click="itemClick(index)">
-				<text :class="{active: index === currentIndex}">{{item.category}}</text>
+				<view class='side-left-item' @click="itemClick(index)" :class="{active: index === currentIndex}">
+				<text>{{item.category}}</text>
 				</view>
-				<!-- <view class='side-left-item'>2</view>
+<!-- 				<view class='side-left-item'>2</view>
 			<view class='side-left-item'>3</view>
 			<view class='side-left-item'>4</view>
 			<view class='side-left-item'>5</view>
@@ -19,6 +19,7 @@
 
 
 		<scroll-view scroll-y="true" class='side-right-wrapper'>
+			<view class='test'>11</view>
 			<block v-for='item in foodsInfo' :key='item.detail'>
 				<block v-for='item in item.detail' :key='item.index'>
 					<view class='side-right-item'>{{item}}</view>
@@ -48,13 +49,28 @@
 		},
 		data() {
 			return {
-				currentIndex: 0
+				currentIndex: 0,
+				toprpx: []
 			};
 		},
 		methods:{
 			itemClick(index) {
+				// console.log(this.getToprpx('.test'))
+				console.log(this.toprpx)
 				this.currentIndex = index
-			}
+			
+			},
+			getToprpx(selector){
+				let view = this.createSelectorQuery().select(selector)
+				view.boundingClientRect(data => {
+					this.toprpx = data.top
+				}).exec();
+
+		},
+		
+		onReady() {
+				this.toprpx.push(this.getToprpx('.test'))
+				}
 		}
 	}
 </script>
@@ -113,7 +129,15 @@
 	}
 	
 	.active {
-		
+		color: red;
+		background-color: #FFFFFF;
+	}
+	.mytext {
+		display: inline-block;
+		background-color: #007AFF;
+	}
+	
+	.side-left-item:active {
 		color: red
 	}
 </style>

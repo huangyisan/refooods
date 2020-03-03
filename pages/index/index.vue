@@ -27,24 +27,23 @@
 						'imgUrl': "../../static/img/swiper-03.jpg"
 					}
 				],
-				foodsInfo: [
-					{
-						'index': 0,
+				foodsInfo: [{
+
 						'category': '荤菜',
-						'detail': ['猪肉','羊肉','牛肉','鸡肉','狗肉']
+						'detail': ['猪肉', '羊肉', '牛肉', '鸡肉', '狗肉']
 					},
-					{   'index': 1,
+					{
 						'category': '蔬菜',
-						'detail': ['青菜','白菜','西红柿','土豆','冬瓜']
+						'detail': ['青菜', '白菜', '西红柿', '土豆', '冬瓜']
 					},
-					{   'index': 2,
+					{
 						'category': '水果',
-						'detail': ['西瓜','香蕉','橘子','菠萝','桃子']
+						'detail': ['西瓜', '香蕉', '橘子', '菠萝', '桃子']
 					}
 				]
-		}
-	},
-	components: {
+			}
+		},
+		components: {
 			cSwiper,
 			cSearch,
 			cFoodsList,
@@ -61,4 +60,7 @@
 
 <style>
 	@import '../../utils/css/base.css';
+	page{
+		position: fixed;
+	}
 </style>

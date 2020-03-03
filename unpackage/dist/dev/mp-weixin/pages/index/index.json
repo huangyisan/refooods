@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "点餐小程序",
+  "enablePullDownRefresh": false,
   "usingComponents": {
     "c-swiper": "/pages/index/c-swiper",
     "c-search": "/pages/index/c-search",

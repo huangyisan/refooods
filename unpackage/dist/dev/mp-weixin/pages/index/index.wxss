@@ -13,4 +13,7 @@
 	/* 子绝父相，有利于子元素定位 */
 	position: relative;
 }
+page{
+	position: fixed;
+}
 

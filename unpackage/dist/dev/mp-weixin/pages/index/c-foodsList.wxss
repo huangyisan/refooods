@@ -1,5 +1,5 @@
 
-.foods-wrapper.data-v-5139fe99 {
+.foods-wrapper.data-v-626055eb {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
@@ -13,19 +13,19 @@
 	top: 350rpx;
 	bottom: 88rpx;
 }
-.side-left-wrapper.data-v-5139fe99 {
+.side-left-wrapper.data-v-626055eb {
 	/* background-color: #F0AD4E; */
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	        flex: 1;
 }
-.side-right-wrapper.data-v-5139fe99 {
+.side-right-wrapper.data-v-626055eb {
 	/* background-color: #829fff; */
 	-webkit-box-flex: 3;
 	-webkit-flex: 3;
 	        flex: 3;
 }
-.side-left-item.data-v-5139fe99 {
+.side-left-item.data-v-626055eb {
 	background: #f8f8f8;
 	/*每个高30px*/
 	height: 80rpx;
@@ -38,8 +38,9 @@
 	/*文字14px*/
 	font-size: 29rpx;
 	color: #101010;
+	text-align: center;
 }
-.side-right-item.data-v-5139fe99 {
+.side-right-item.data-v-626055eb {
 	background: #fff;
 	/*每个高30px*/
 	height: 80rpx;
@@ -52,5 +53,16 @@
 	/*文字14px*/
 	font-size: 29rpx;
 	color: #101010;
+}
+.active.data-v-626055eb {
+	color: red;
+	background-color: #FFFFFF;
+}
+.mytext.data-v-626055eb {
+	display: inline-block;
+	background-color: #007AFF;
+}
+.side-left-item.data-v-626055eb:active {
+	color: red
 }
 
