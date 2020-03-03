@@ -1,10 +1,12 @@
 <template>
 	<view class='foods-wrapper'>
-		
+
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
-			<block v-for='item in foodsInfo' :key='item.category'>
-<view class='side-left-item'>{{item.category}}</view>
-			<!-- <view class='side-left-item'>2</view>
+			<block v-for='(item,index) in foodsInfo' :key='item.category' >
+				<view class='side-left-item' @click="itemClick(index)">
+				<text :class="{active: index === currentIndex}">{{item.category}}</text>
+				</view>
+				<!-- <view class='side-left-item'>2</view>
 			<view class='side-left-item'>3</view>
 			<view class='side-left-item'>4</view>
 			<view class='side-left-item'>5</view>
@@ -13,14 +15,14 @@
 			<view class='side-left-item'>8</view>
 			<view class='side-left-item'>9</view> -->
 			</block>
-	</scroll-view>
-	
+		</scroll-view>
+
 
 		<scroll-view scroll-y="true" class='side-right-wrapper'>
 			<block v-for='item in foodsInfo' :key='item.detail'>
 				<block v-for='item in item.detail' :key='item.index'>
-			<view class='side-right-item'>{{item}}</view>
-<!-- 			<view class='side-right-item'>2</view>
+					<view class='side-right-item'>{{item}}</view>
+					<!-- 			<view class='side-right-item'>2</view>
 			<view class='side-right-item'>3</view>
 			<view class='side-right-item'>4</view>
 			<view class='side-right-item'>5</view>
@@ -28,7 +30,7 @@
 			<view class='side-right-item'>7</view>
 			<view class='side-right-item'>8</view>
 			<view class='side-right-item'>9</view> -->
-			</block>
+				</block>
 			</block>
 		</scroll-view>
 	</view>
@@ -36,21 +38,25 @@
 
 <script>
 	export default {
-		props:{
+		props: {
 			'foodsInfo': {
 				type: Array,
-				default() {
+				default () {
 					return []
 				}
 			}
 		},
 		data() {
 			return {
-				
+				currentIndex: 0
 			};
+		},
+		methods:{
+			itemClick(index) {
+				this.currentIndex = index
+			}
 		}
 	}
-
 </script>
 
 <style scoped>
@@ -88,7 +94,9 @@
 		/*文字14px*/
 		font-size: 29rpx;
 		color: #101010;
+		text-align: center;
 	}
+
 	.side-right-item {
 		background: #fff;
 		/*每个高30px*/
@@ -102,5 +110,10 @@
 		/*文字14px*/
 		font-size: 29rpx;
 		color: #101010;
+	}
+	
+	.active {
+		
+		color: red
 	}
 </style>
