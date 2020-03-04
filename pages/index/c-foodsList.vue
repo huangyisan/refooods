@@ -18,7 +18,7 @@
 		</scroll-view>
 
 
-		<scroll-view scroll-y="true" class='side-right-wrapper' :scroll-into-view="scrollTopId">
+		<scroll-view scroll-y="true" class='side-right-wrapper' :scroll-into-view="scrollTopId" :scroll-top="scrollTop" scroll-with-animation="true">
 				<view class="vegetables" id='vegetables'>
 					<food-item :foods="vegetables"></food-item>
 				</view>
@@ -50,6 +50,7 @@
 		data() {
 			return {
 				currentIndex: 0,
+				scrollTop: 0,
 				toprpx: [],
 				scrollTopId: 'aa',
 				vegetables: {
@@ -70,6 +71,7 @@
 			itemClick(index) {
 				console.log(this.toprpx)
 				this.currentIndex = index
+				// this.scrollTop = -400
 				switch(index) {
 					case 0:
 					this.scrollTopId = 'vegetables'
