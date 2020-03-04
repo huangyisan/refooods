@@ -18,17 +18,16 @@
 		</scroll-view>
 
 
-		<scroll-view scroll-y="true" class='side-right-wrapper'>
-			<block>
-				<view class="vegetables">
+		<scroll-view scroll-y="true" class='side-right-wrapper' :scroll-into-view="scrollTopId">
+				<view class="vegetables" id='vegetables'>
 					<food-item :foods="vegetables"></food-item>
 				</view>
-			</block>
-			<block>
-				<view class="fruit">
+				<view class="fruit" id='fruit'>
 					<food-item :foods="fruit"></food-item>
 				</view>
-			</block>
+				<view class="wine" id='wine'>
+					<food-item :foods="wine"></food-item>
+				</view>
 		</scroll-view>
 	</view>
 </template>
@@ -52,34 +51,49 @@
 			return {
 				currentIndex: 0,
 				toprpx: [],
+				scrollTopId: 'aa',
 				vegetables: {
-					'category': '蔬菜',
-					'detail': ['青菜', '白菜', '西红柿', '土豆', '冬瓜']
+					'category': '川菜',
+					'detail': ['麻婆豆腐', '回锅肉', '宫保鸡丁', '夫妻肺片', '蚂蚁上树', '蒜泥白肉', '口水鸡']
 				},
 				fruit: {
-					'category': '水果',
-					'detail': ['西瓜', '香蕉', '橘子', '菠萝', '桃子']
+					'category': '粤菜',
+					'detail': ['干炒牛河', '酸甜排骨', '铁板牛肉', '豉油鸡', '云吞面','广东粥','烧味']
+				},
+				wine: {
+					'category': '鲁菜',
+					'detail': ['奶汤蒲菜', '糖醋鲤鱼', '爆炒腰花', '锅烧肘子', '干烂虾仁', '油爆肚头']
 				}
 			};
 		},
 		methods: {
-			// itemClick(index) {
-			// 	// console.log(this.getToprpx('.test'))
-			// 	console.log(this.toprpx)
-			// 	this.currentIndex = index
+			itemClick(index) {
+				console.log(this.toprpx)
+				this.currentIndex = index
+				switch(index) {
+					case 0:
+					this.scrollTopId = 'vegetables'
+					break;
+					case 1:
+					this.scrollTopId = 'fruit'
+					break;
+					case 2:
+					this.scrollTopId = 'wine' 
+				}
+			},
+			getToprpx(selector) {
+				let view = this.createSelectorQuery().select(selector)
+				view.boundingClientRect(data => {
+					this.toprpx.push(data.top)
+				}).exec();
 
-			// },
-			// getToprpx(selector) {
-			// 	let view = this.createSelectorQuery().select(selector)
-			// 	view.boundingClientRect(data => {
-			// 		this.toprpx = data.top
-			// 	}).exec();
+			},
 
-			// },
-
-			// onReady() {
-			// 	this.toprpx.push(this.getToprpx('.test'))
-			// }
+			onReady() {
+				this.getToprpx('.vegetables')
+				this.getToprpx('.fruit')
+				console.log(this.toprpx)
+			}
 		}
 	}
 </script>
