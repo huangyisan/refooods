@@ -92,34 +92,33 @@
 			getToprpx(selector) {
 				let view = this.createSelectorQuery().select(selector)
 				view.boundingClientRect(data => {
-					this.toprpx.push(data.height)
+					this.toprpx.push(data.top)
 				}).exec();
 
 			},
 
 			onReady() {
 				this.getToprpx('.vegetables')
-				// this.getToprpx('.fruit')
-				console.log(this.toprpx)
+				this.getToprpx('.fruit')
+				this.getToprpx('.wine')
+				
 			},
 
 			// 监听滚动
 			scrollInfo(position) {
-				if (position.target.scrollTop < 700) {
+				console.log(this.toprpx)
+				let gapOne = this.toprpx[1] - this.toprpx[0]
+				let gapTow = this.toprpx[2] - this.toprpx[0]
+				if (position.target.scrollTop < gapOne ) {
 					this.currentIndex = 0
 					this.scrollTopId = 'default'
-					console.log('index0' + position.target.scrollTop)
-				}else if(position.target.scrollTop > 700 && position.target.scrollTop < 1400){
+				}else if(position.target.scrollTop > gapOne && position.target.scrollTop < gapTow){
 					this.currentIndex = 1
 					this.scrollTopId = 'default'
-					console.log('index1' + position.target.scrollTop)
-				}else if(position.target.scrollTop > 1400){
-					console.log('大于1400')
+				}else if(position.target.scrollTop > gapTow){
 					this.currentIndex = 2
 					this.scrollTopId = 'default'
 				}
-				// console.log(position.target.scrollTop)
-				// console.log(this.toprpx)
 			}
 		}
 	}
