@@ -107,16 +107,16 @@
 			scrollInfo(position) {
 				if (position.target.scrollTop < 700) {
 					this.currentIndex = 0
-					this.scrollTopId = 'vegetables'
+					this.scrollTopId = 'default'
 					console.log('index0' + position.target.scrollTop)
 				}else if(position.target.scrollTop > 700 && position.target.scrollTop < 1400){
 					this.currentIndex = 1
-					this.scrollTopId = 'fruit'
+					this.scrollTopId = 'default'
 					console.log('index1' + position.target.scrollTop)
 				}else if(position.target.scrollTop > 1400){
 					console.log('大于1400')
 					this.currentIndex = 2
-					this.scrollTopId = 'wine'
+					this.scrollTopId = 'default'
 				}
 				// console.log(position.target.scrollTop)
 				// console.log(this.toprpx)

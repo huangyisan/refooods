@@ -18,13 +18,13 @@
 		data() {
 			return {
 				imgList: [{
-						'imgUrl': "../../static/img/swiper-01.jpg"
+						'imgUrl': "../../static/img/swiper/swiper-01.jpg"
 					},
 					{
-						'imgUrl': "../../static/img/swiper-02.jpg"
+						'imgUrl': "../../static/img/swiper/swiper-02.jpg"
 					},
 					{
-						'imgUrl': "../../static/img/swiper-03.jpg"
+						'imgUrl': "../../static/img/swiper/swiper-03.jpg"
 					}
 				],
 				foodsInfo: [
