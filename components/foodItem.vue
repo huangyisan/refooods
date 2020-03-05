@@ -24,10 +24,10 @@
 	
 	.food-item {
 		background: #fff;
-		/*每个高30px*/
-		height: 80rpx;
+		/*每个高170rpx*/
+		height: 170rpx;
 		/*垂直居中*/
-		line-height: 80rpx;
+		line-height: 170rpx;
 		/*再设上下padding增加高度，总高42px*/
 		padding: 15rpx 0;
 		/*只设下边线*/

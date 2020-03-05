@@ -18,16 +18,20 @@
 		</scroll-view>
 
 
-		<scroll-view scroll-y="true" class='side-right-wrapper' :scroll-into-view="scrollTopId" :scroll-top="scrollTop" scroll-with-animation="true">
-				<view class="vegetables" id='vegetables'>
-					<food-item :foods="vegetables"></food-item>
-				</view>
-				<view class="fruit" id='fruit'>
-					<food-item :foods="fruit"></food-item>
-				</view>
-				<view class="wine" id='wine'>
-					<food-item :foods="wine"></food-item>
-				</view>
+		<scroll-view scroll-y="true" class='side-right-wrapper' :scroll-into-view="scrollTopId" :scroll-top="scrollTop"
+		 scroll-with-animation="true" @scroll="scrollInfo">
+			<view class="vegetables" id='vegetables'>
+				<view class='itemTitle'>川菜系</view>
+				<food-item :foods="vegetables"></food-item>
+			</view>
+			<view class="fruit" id='fruit'>
+				<view class='itemTitle'>粤菜系</view>
+				<food-item :foods="fruit"></food-item>
+			</view>
+			<view class="wine" id='wine'>
+				<view class='itemTitle'>鲁菜系</view>
+				<food-item :foods="wine"></food-item>
+			</view>
 		</scroll-view>
 	</view>
 </template>
@@ -51,15 +55,16 @@
 			return {
 				currentIndex: 0,
 				scrollTop: 0,
+				// 存放组件自身高度
 				toprpx: [],
-				scrollTopId: 'aa',
+				scrollTopId: 'vegetable',
 				vegetables: {
 					'category': '川菜',
 					'detail': ['麻婆豆腐', '回锅肉', '宫保鸡丁', '夫妻肺片', '蚂蚁上树', '蒜泥白肉', '口水鸡']
 				},
 				fruit: {
 					'category': '粤菜',
-					'detail': ['干炒牛河', '酸甜排骨', '铁板牛肉', '豉油鸡', '云吞面','广东粥','烧味']
+					'detail': ['干炒牛河', '酸甜排骨', '铁板牛肉', '豉油鸡', '云吞面', '广东粥', '烧味']
 				},
 				wine: {
 					'category': '鲁菜',
@@ -68,33 +73,53 @@
 			};
 		},
 		methods: {
+			// 左侧点击, 改变样式, 并且同步右侧内容
 			itemClick(index) {
 				console.log(this.toprpx)
 				this.currentIndex = index
 				// this.scrollTop = -400
-				switch(index) {
+				switch (index) {
 					case 0:
-					this.scrollTopId = 'vegetables'
-					break;
+						this.scrollTopId = 'vegetables'
+						break;
 					case 1:
-					this.scrollTopId = 'fruit'
-					break;
+						this.scrollTopId = 'fruit'
+						break;
 					case 2:
-					this.scrollTopId = 'wine' 
+						this.scrollTopId = 'wine'
 				}
 			},
 			getToprpx(selector) {
 				let view = this.createSelectorQuery().select(selector)
 				view.boundingClientRect(data => {
-					this.toprpx.push(data.top)
+					this.toprpx.push(data.height)
 				}).exec();
 
 			},
 
 			onReady() {
 				this.getToprpx('.vegetables')
-				this.getToprpx('.fruit')
+				// this.getToprpx('.fruit')
 				console.log(this.toprpx)
+			},
+
+			// 监听滚动
+			scrollInfo(position) {
+				if (position.target.scrollTop < 700) {
+					this.currentIndex = 0
+					this.scrollTopId = 'vegetables'
+					console.log('index0' + position.target.scrollTop)
+				}else if(position.target.scrollTop > 700 && position.target.scrollTop < 1400){
+					this.currentIndex = 1
+					this.scrollTopId = 'fruit'
+					console.log('index1' + position.target.scrollTop)
+				}else if(position.target.scrollTop > 1400){
+					console.log('大于1400')
+					this.currentIndex = 2
+					this.scrollTopId = 'wine'
+				}
+				// console.log(position.target.scrollTop)
+				// console.log(this.toprpx)
 			}
 		}
 	}
@@ -138,20 +163,6 @@
 		text-align: center;
 	}
 
-	.side-right-item {
-		background: #fff;
-		/*每个高30px*/
-		height: 80rpx;
-		/*垂直居中*/
-		line-height: 80rpx;
-		/*再设上下padding增加高度，总高42px*/
-		padding: 15rpx 0;
-		/*只设下边线*/
-		/* border-bottom: 1px solid #de5cd1; */
-		/*文字14px*/
-		font-size: 29rpx;
-		color: #101010;
-	}
 
 	.active {
 		color: red;
@@ -165,5 +176,11 @@
 
 	.side-left-item:active {
 		color: red
+	}
+	
+	.itemTitle {
+		height: 40rpx;
+		text-align: center;
+		text-align: 40rpx;
 	}
 </style>
