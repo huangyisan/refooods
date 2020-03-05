@@ -2,9 +2,9 @@
 	<view>
 		<block v-for="(item,index) in foods.detail" :key="index">
 			<view class="food-item">
-				<!-- <image src="" mode=""></image> -->
-				<text>{{item}}</text>
-				<!-- <text></text> -->
+				<image src="../static/img/foodlist/rightOne.jpg" mode="" class='itemPic'></image>
+				<text class='itemTitle'>{{item}}</text>
+				<text class='itemDescription'>麻婆豆腐，是四大中国菜系中代表川菜的一種。</text>
 			</view>
 		</block>
 	</view>
@@ -27,7 +27,7 @@
 		/*每个高170rpx*/
 		height: 170rpx;
 		/*垂直居中*/
-		line-height: 170rpx;
+		/* line-height: 170rpx; */
 		/*再设上下padding增加高度，总高42px*/
 		padding: 15rpx 0;
 		/*只设下边线*/
@@ -35,6 +35,30 @@
 		/*文字14px*/
 		font-size: 29rpx;
 		color: #101010;
+		display: flex;
+		flex-direction: row;
 		/* background-color: #007AFF; */
+		position: relative;
+	}
+	.itemPic {
+		width: 140rpx;
+		height: 140rpx;
+		margin-right: 40rpx;
+		vertical-align: middle;
+	}
+	
+	.itemTitle {
+		position: absolute;
+		height: 60rpx;
+		font-weight: 700;
+		top: 4rpx;
+		left: 180rpx;
+		
+	}
+	.itemDescription {
+		position: absolute;
+		height: 100rpx;
+		bottom: 0;
+		left: 180rpx;
 	}
 </style>

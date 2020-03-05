@@ -178,8 +178,10 @@
 	}
 	
 	.itemTitle {
-		height: 40rpx;
+		/* height: 40rpx; */
 		text-align: center;
-		text-align: 40rpx;
+		/* text-align: 40rpx; */
+		margin: 40rpx auto;
+		color: #007AFF;
 	}
 </style>
