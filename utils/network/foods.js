@@ -5,7 +5,7 @@ export function getFoodsInfo(url) {
 }
 
 
-export class FoodsInfo {
+export class Foods {
   constructor(title,info) {
     //  顶栏title
     this.title = title

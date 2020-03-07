@@ -102,6 +102,7 @@
 				this.getToprpx('.fruit')
 				this.getToprpx('.wine')
 
+				console.log(111)
 				console.log(this.foodsCategory)
 				
 			},

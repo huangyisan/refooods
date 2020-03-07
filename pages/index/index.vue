@@ -46,8 +46,13 @@
 			cBottomBar,
 		},
 		onLoad() {
+			// const vm = this
+			console.log('我是name')
+			console.log(this.foodsCategory)
+			console.log('我是name')
 			getFoodsInfo('/foodsinfo.json').then(res => {
 				const data = res.data.data.menu
+				
 				/**
 				 * 数据结构如下
 				 * {
@@ -78,7 +83,10 @@
 							})
 					}
 				}
-				console.log(this.foodsCategory)
+
+
+				console.log(222)
+				// console.log(this.foodsCategory)
 			})
 		},
 
