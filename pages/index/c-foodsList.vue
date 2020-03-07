@@ -4,7 +4,7 @@
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
 			<block v-for='(item,index) in foodsCategory' :key='index'>
 				<view class='side-left-item' @click="itemClick(index)" :class="{active: index === currentIndex}">
-					<text>{{item}}</text>
+					<text>{{index}}</text>
 				</view>
 				<!-- 				<view class='side-left-item'>2</view>
 			<view class='side-left-item'>3</view>

@@ -64,15 +64,19 @@
 				 * 
 				 */
 				// 左栏数据和右侧栏数据
+				const foodDict = {}
 				for(const index in data){
 					const foods = data[index].foods
 					// 初始化标题层,置为array类型
-					this.foodsCategory[data[index].name] = []
+					foodDict[data[index].name] = []
+
+					// 如果采用这种方式,foodsCategory最后依旧为[]
+					// this.foodsCategory[data[index].name] = []
 
 					// 往array里面存放字典
 					for(const indey in foods){
 						const info = foods[indey]
-						this.foodsCategory[data[index].name].push({
+						foodDict[data[index].name].push({
 							name: info.name,
 							item_id: info.item_id,
 							description: info.description,
@@ -83,6 +87,8 @@
 							})
 					}
 				}
+				// 将foodDict赋值给this.foodsCategory
+				this.foodsCategory = foodDict
 
 
 				console.log(222)
