@@ -2,9 +2,9 @@
 	<view class='foods-wrapper'>
 
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
-			<block v-for='(item,index) in foodsInfo' :key='item.category'>
+			<block v-for='(item,index) in foodsCategory' :key='index'>
 				<view class='side-left-item' @click="itemClick(index)" :class="{active: index === currentIndex}">
-					<text>{{item.category}}</text>
+					<text>{{item}}</text>
 				</view>
 				<!-- 				<view class='side-left-item'>2</view>
 			<view class='side-left-item'>3</view>
@@ -44,7 +44,7 @@
 			foodItem
 		},
 		props: {
-			'foodsInfo': {
+			'foodsCategory': {
 				type: Array,
 				default () {
 					return []
@@ -101,6 +101,8 @@
 				this.getToprpx('.vegetables')
 				this.getToprpx('.fruit')
 				this.getToprpx('.wine')
+
+				console.log(this.foodsCategory)
 				
 			},
 

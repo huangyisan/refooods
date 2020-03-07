@@ -2,7 +2,7 @@
 	<view class="content">
 		<c-swiper :imgList='imgList'></c-swiper>
 		<c-search></c-search>
-		<c-foods-list :foodsInfo='foodsInfo'></c-foods-list>
+		<c-foods-list :foodsCategory='foodsCategory'></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
 	</view>
 </template>
@@ -31,17 +31,8 @@
 						'imgUrl': "../../static/img/swiper/swiper-03.jpg"
 					}
 				],
-				foodsInfo: [
-					{
-						'category': '川菜',
-					},
-					{
-						'category': '粤菜',
-					},
-					{
-						'category': '鲁菜',
-					}
-				]
+				// 存放事物类型,左边栏
+				foodsCategory: []
 		} 
 	},
 	components: {
@@ -52,8 +43,14 @@
 		},
 		onLoad() {
 			getFoodsInfo('/foodsinfo.json').then(res => {
-				// console.log(res)
+				const data = res.data.data.menu
+				console.log(data)
+				for(const index in data){
+					this.foodsCategory.push(data[index].name)
+				}
+				console.log(this.foodsCategory)
 			})
+
 			// .then(res =>{
 			// 	console.log(res)
 			// })
