@@ -41,8 +41,10 @@ class Request {
 
 }
 
-export const request = new Request({
-	baseURL: 'https://www.easy-mock.com',
+const request = new Request({
+	baseURL: 'http://mock.kirakirazone.com/',
 	api: '/mock',
 })
+
+export {request}
 
