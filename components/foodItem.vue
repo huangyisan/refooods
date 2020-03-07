@@ -10,6 +10,7 @@
 	</view>
 </template>
 
+
 <script>
 	export default {
 		props: {

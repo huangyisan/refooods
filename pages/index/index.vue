@@ -12,6 +12,7 @@
 	import cSearch from './c-search.vue'
 	import cFoodsList from './c-foodsList.vue'
 	import cBottomBar from './c-bottomBar.vue'
+	import request from '../../utils/network/request'
 
 
 	export default {
@@ -47,7 +48,8 @@
 			cBottomBar,
 		},
 		onLoad() {
-
+			res = request('GET', '/5e61961af0848d6c0cc550aa/example/menu')
+			console.log(res)
 		},
 		methods: {
 
