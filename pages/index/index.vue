@@ -48,9 +48,15 @@
 			cBottomBar,
 		},
 		onLoad() {
-			res = request('GET', '/5e61961af0848d6c0cc550aa/example/menu')
-			console.log(res)
+			console.log('这个是请求获得的内容')
+			const libs = require('../../utils/network/request')
+			libs.request.get('/5e61961af0848d6c0cc550aa/example/menu').then(res => {
+				console.log(res)
+			}).catch(err => {
+				console.log(err)
+			})			
 		},
+
 		methods: {
 
 		}

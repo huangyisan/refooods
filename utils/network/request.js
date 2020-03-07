@@ -6,18 +6,21 @@ class Request {
 	}
 
 	request(method, url, data) {
+		// 这边vm=this用来固化this属于class Request的域.
+		const vm = this
 		return new Promise((resolve, reject) => {
 			uni.request({
-				url = this.baseURL + this.api + url,
+				url: this.baseURL + this.api + url,
 				data,
 				method,
 				success(res) {
 					resolve(res)
 				},
-				fail() {
+				fail(info) {
 					reject({
 						msg: '请求失败',
-						url: this.baseURL + this.api + url,
+						// 这边不能用this. 因为this的域已经不在class Request里了
+						url: vm.baseURL + vm.api + url,
 						method,
 						data
 					})
