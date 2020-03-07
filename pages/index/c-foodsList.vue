@@ -45,9 +45,9 @@
 		},
 		props: {
 			'foodsCategory': {
-				type: Array,
+				type: Object,
 				default () {
-					return []
+					return {}
 				}
 			}
 		},

@@ -14,7 +14,7 @@
 	import cBottomBar from './c-bottomBar.vue'
 
 	// network request
-	import {getFoodsInfo} from '../../utils/network/foodsInfo'
+	import {getFoodsInfo, Foods} from '../../utils/network/foods'
 	import {request} from '../../utils/network/request'
 
 
@@ -31,8 +31,12 @@
 						'imgUrl': "../../static/img/swiper/swiper-03.jpg"
 					}
 				],
-				// 存放事物类型,左边栏
-				foodsCategory: []
+				// 存放食物类型,左边栏
+				foodsCategory: {},
+
+				// 存放食物信息,右侧栏
+				foods: []
+
 		} 
 	},
 	components: {
@@ -44,21 +48,38 @@
 		onLoad() {
 			getFoodsInfo('/foodsinfo.json').then(res => {
 				const data = res.data.data.menu
-				console.log(data)
+				/**
+				 * 数据结构如下
+				 * {
+				 *	"标题1":[{"name":1},{"name":2}],
+				 *	"标题2":[{"name":1},{"name":2}],
+				 *  "标题3":[{"name":1},{"name":2}],
+				 *	"标题4":[{"name":1},{"name":2}]
+				 *	}
+				 * 
+				 */
+				// 左栏数据和右侧栏数据
 				for(const index in data){
-					this.foodsCategory.push(data[index].name)
+					const foods = data[index].foods
+					// 初始化标题层,置为array类型
+					this.foodsCategory[data[index].name] = []
+
+					// 往array里面存放字典
+					for(const indey in foods){
+						const info = foods[indey]
+						this.foodsCategory[data[index].name].push({
+							name: info.name,
+							item_id: info.item_id,
+							description: info.description,
+							month_sales: info.month_sales,
+							materials: info.materials,
+							satisfy_rate: info.satisfy_rate,
+							lowest_price: info.lowest_price,
+							})
+					}
 				}
 				console.log(this.foodsCategory)
 			})
-
-			// .then(res =>{
-			// 	console.log(res)
-			// })
-			// .catch(err =>{
-			// 	console.log(err)
-			// })
-			// console.log(data)
-				
 		},
 
 		methods: {
