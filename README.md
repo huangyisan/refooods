@@ -1,1 +1,1 @@
-http://mock.kirakirazone.com/mock/foodsinfo.json
+http://mock.myzone.com/mock/foodsinfo.json
