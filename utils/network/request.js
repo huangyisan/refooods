@@ -7,7 +7,7 @@ class Request {
 
 	request(method, url, data) {
 		return new Promise((resolve, reject) => {
-			wx.request({
+			uni.request({
 				url = this.baseURL + this.api + url,
 				data,
 				method,
