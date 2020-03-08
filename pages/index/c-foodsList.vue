@@ -20,18 +20,44 @@
 
 		<scroll-view scroll-y="true" class='side-right-wrapper' :scroll-into-view="scrollTopId" :scroll-top="scrollTop"
 		 scroll-with-animation="true" @scroll="scrollInfo">
+
+			<block v-for="(item,index) in foodsCategory" :key='index'>
+				<view class='itemTitle'>{{item}}</view>
+				<view v-for="(iten, indey) in foods[item]" :key='indey'>
+					<text>{{iten.name}}</text>
+					<text>{{iten.description}}</text>
+					<text>{{iten.month_sales}}</text>
+					<text>{{iten.materials}}</text>
+					<text>{{iten.satisfy_rate}}</text>
+					<text>{{iten.lowest_price}}</text>
+					</view>
+
+
+			</block>
+			<!-- <block v-for="(item,index) in foods" :key='index'>
+				<block v-for="(iten, indey) in item" :key='indey'>
+				<view class='food-item'>
+					<text>{{iten.name}}</text>
+					<text>{{iten.description}}</text>
+					<text>{{iten.month_sales}}</text>
+					<text>{{iten.materials}}</text>
+					<text>{{iten.satisfy_rate}}</text>
+					<text>{{iten.lowest_price}}</text>
+					</view>
+				</block>
+			</block> -->
+
 			<view class="vegetables" id='vegetables'>
 				<view class='itemTitle'>川菜系</view>
-				<food-item :foods="vegetables"></food-item>
+				<block v-for="(item,index) in foods.detail" :key="index">
+			<view class="food-item">
+				<image src="../static/img/foodlist/rightOne.jpg" mode="" class='itemPic'></image>
+				<text class='itemTitle'>{{item}}</text>
+				<text class='itemDescription'>麻婆豆腐，是四大中国菜系中代表川菜的一種。</text>
 			</view>
-			<view class="fruit" id='fruit'>
-				<view class='itemTitle'>粤菜系</view>
-				<food-item :foods="fruit"></food-item>
+		</block>
 			</view>
-			<view class="wine" id='wine'>
-				<view class='itemTitle'>鲁菜系</view>
-				<food-item :foods="wine"></food-item>
-			</view>
+			
 		</scroll-view>
 	</view>
 </template>
@@ -102,13 +128,13 @@
 						this.scrollTopId = 'wine'
 				}
 			},
-			getToprpx(selector) {
-				let view = this.createSelectorQuery().select(selector)
-				view.boundingClientRect(data => {
-					this.toprpx.push(data.top)
-				}).exec();
+			// getToprpx(selector) {
+			// 	let view = this.createSelectorQuery().select(selector)
+			// 	view.boundingClientRect(data => {
+			// 		this.toprpx.push(data.top)
+			// 	}).exec();
 
-			},
+			// },
 
 			// 监听滚动
 			scrollInfo(position) {
@@ -201,4 +227,7 @@
 		margin: 40rpx auto;
 		color: #007AFF;
 	}
+
+
+	/*  */
 </style>
