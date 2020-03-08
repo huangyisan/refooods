@@ -47,9 +47,6 @@
 		},
 		onLoad() {
 			// const vm = this
-			console.log('我是name')
-			console.log(this.foodsCategory)
-			console.log('我是name')
 			getFoodsInfo('/foodsinfo.json').then(res => {
 				const data = res.data.data.menu
 				

@@ -75,7 +75,7 @@
 		methods: {
 			// 左侧点击, 改变样式, 并且同步右侧内容
 			itemClick(index) {
-				console.log(this.toprpx)
+				console.log(index)
 				this.currentIndex = index
 				// this.scrollTop = -400
 				switch (index) {
@@ -97,19 +97,8 @@
 
 			},
 
-			onReady() {
-				this.getToprpx('.vegetables')
-				this.getToprpx('.fruit')
-				this.getToprpx('.wine')
-
-				console.log(111)
-				console.log(this.foodsCategory)
-				
-			},
-
 			// 监听滚动
 			scrollInfo(position) {
-				console.log(this.toprpx)
 				let gapOne = this.toprpx[1] - this.toprpx[0]
 				let gapTow = this.toprpx[2] - this.toprpx[0]
 				if (position.target.scrollTop < gapOne ) {
@@ -123,7 +112,13 @@
 					this.scrollTopId = 'default'
 				}
 			}
-		}
+		},
+
+		onReady() {
+		this.getToprpx('.vegetables')
+		this.getToprpx('.fruit')
+		this.getToprpx('.wine')
+		},
 	}
 </script>
 
