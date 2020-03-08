@@ -156,7 +156,7 @@ export default {
 
     // 监听滚动
     scrollInfo(position) {
-      console.log(this.foods);
+      // console.log(this.foods);
       let gapOne = this.toprpx[1] - this.toprpx[0];
       let gapTow = this.toprpx[2] - this.toprpx[0];
       if (position.target.scrollTop < gapOne) {
@@ -265,7 +265,7 @@ export default {
 
 /* foods style */
   .food-info-wrapper {
-
+		
     padding: 2.666667vw 0;
 
     margin-bottom: .133333vw;
@@ -281,11 +281,13 @@ export default {
 		margin-right: 20rpx;
 		vertical-align: middle;
 		border-radius: .533333vw;
+		flex: 1
 	}
 
 	.food-info {
 		display: flex;
 		flex-direction: column;
+		flex: 3
 	}
 
 	.item-name {
@@ -326,13 +328,14 @@ export default {
 
 	/* 物品添加图标 */
 	.price-cart-add {
+		width: 100%;
 		position: relative;
 	}
   .item-cart-add-icon {
 		width: 40rpx;
 		height: 40rpx;
 		position: absolute;
-		right: 20rpx;
+		right: 50rpx;
 		bottom: 4rpx;
   }
 /*  */
