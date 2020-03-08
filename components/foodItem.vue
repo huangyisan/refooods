@@ -12,12 +12,34 @@
 
 
 <script>
+import {EventBus} from '../utils/js/bus'
 	export default {
 		props: {
 			foods: {
 				type: Object,
 			}
+		},
+		data() {
+			return {
+				food:{},
+				isFood: true
+			}
+		},
+		created() {
+			if(this.isFood){
+				// console.log(this.isFood)
+			EventBus.$on('food', (food) =>{
+				console.log('我是foodItem组件,on事件')
+				console.log(food)
+				
+				
+			})
+			this.isFood = false
+			console.log(this.isFood)
+			}
+			// EventBus.$off('food')
 		}
+
 	}
 </script>
 

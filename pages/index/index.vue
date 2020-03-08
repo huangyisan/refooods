@@ -2,7 +2,7 @@
 	<view class="content">
 		<c-swiper :imgList='imgList'></c-swiper>
 		<c-search></c-search>
-		<c-foods-list :foodsCategory='foodsCategory'></c-foods-list>
+		<c-foods-list :foodsCategory='foodsCategory' :foods='foods' :testMessage='testMessage'></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
 	</view>
 </template>
@@ -16,6 +16,9 @@
 	// network request
 	import {getFoodsInfo, Foods} from '../../utils/network/foods'
 	import {request} from '../../utils/network/request'
+
+	// bus
+	import {EventBus} from '../../utils/js/bus'
 
 
 	export default {
@@ -35,7 +38,9 @@
 				foodsCategory: [],
 
 				// 存放食物信息,右侧栏
-				foods: {}
+				foods: {},
+				// 测试信息
+				testMessage:'测试信息'
 
 		} 
 	},
@@ -45,9 +50,15 @@
 			cFoodsList,
 			cBottomBar,
 		},
-		onLoad() {
-			// const vm = this
-			getFoodsInfo('/foodsinfo.json').then(res => {
+	created() {
+		this.selfGetFoodsInfo()
+		},
+
+
+
+	methods: {
+			selfGetFoodsInfo() {
+				getFoodsInfo('/foodsinfo.json').then(res => {
 				const data = res.data.data.menu
 				
 				/**
@@ -90,15 +101,15 @@
 				this.foods = foodDict
 				this.foodsCategory = foodsCategory
 
-
-				console.log(222)
+				// 通过事件总线发射foods属性出去
+			// console.log(EventBus)
+			EventBus.$emit('food', this.foods
+			)
+				console.log('我是index组件,emit事件')
 				console.log(this.foods)
-				console.log(this.foodsCategory)
+				// console.log(this.foodsCategory)
 			})
-		},
-
-		methods: {
-
+			}
 		}
 	}
 </script>
