@@ -32,10 +32,10 @@
 					}
 				],
 				// 存放食物类型,左边栏
-				foodsCategory: {},
+				foodsCategory: [],
 
 				// 存放食物信息,右侧栏
-				foods: []
+				foods: {}
 
 		} 
 	},
@@ -62,9 +62,11 @@
 				 */
 				// 左栏数据和右侧栏数据
 				const foodDict = {}
+				const foodsCategory = []
 				for(const index in data){
 					const foods = data[index].foods
 					// 初始化标题层,置为array类型
+					foodsCategory.push(data[index].name)
 					foodDict[data[index].name] = []
 
 					// 如果采用这种方式,foodsCategory最后依旧为[]
@@ -85,11 +87,13 @@
 					}
 				}
 				// 将foodDict赋值给this.foodsCategory
-				this.foodsCategory = foodDict
+				this.foods = foodDict
+				this.foodsCategory = foodsCategory
 
 
 				console.log(222)
-				// console.log(this.foodsCategory)
+				console.log(this.foods)
+				console.log(this.foodsCategory)
 			})
 		},
 
