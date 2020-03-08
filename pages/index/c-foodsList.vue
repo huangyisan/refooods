@@ -3,8 +3,9 @@
 
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
 			<block v-for='(item,index) in foodsCategory' :key='index'>
+				<block v-for='(des,title) in item' :key='title'>
 				<view class='side-left-item' @click="itemClick(index)" :class="{active: index === currentIndex}">
-					<text>{{item}}</text>
+					<text>{{title}}</text>
 				</view>
 				<!-- 				<view class='side-left-item'>2</view>
 			<view class='side-left-item'>3</view>
@@ -14,6 +15,7 @@
 			<view class='side-left-item'>7</view>
 			<view class='side-left-item'>8</view>
 			<view class='side-left-item'>9</view> -->
+					</block>
 			</block>
 		</scroll-view>
 
@@ -22,8 +24,9 @@
 		 scroll-with-animation="true" @scroll="scrollInfo">
 
 			<block v-for="(item,index) in foodsCategory" :key='index'>
-				<view class='itemTitle'>{{item}}</view>
-				<view v-for="(iten, indey) in foods[item]" :key='indey'>
+				<block v-for='(des,title) in item' :key='title'>
+				<view class='itemTitle'>{{title}} {{des}}</view>
+				<view v-for="(iten, indey) in foods[title]" :key='indey'>
 					<text>{{iten.name}}</text>
 					<text>{{iten.description}}</text>
 					<text>{{iten.month_sales}}</text>
@@ -31,7 +34,7 @@
 					<text>{{iten.satisfy_rate}}</text>
 					<text>{{iten.lowest_price}}</text>
 					</view>
-
+</block>
 
 			</block>
 			<!-- <block v-for="(item,index) in foods" :key='index'>

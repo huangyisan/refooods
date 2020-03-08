@@ -77,7 +77,9 @@
 				for(const index in data){
 					const foods = data[index].foods
 					// 初始化标题层,置为array类型
-					foodsCategory.push(data[index].name)
+					const food_name = data[index].name
+					const food_description = data[index].description
+					foodsCategory.push({[food_name]:[food_description]})
 					foodDict[data[index].name] = []
 
 					// 如果采用这种方式,foodsCategory最后依旧为[]
@@ -107,7 +109,7 @@
 			)
 				console.log('我是index组件,emit事件')
 				console.log(this.foods)
-				// console.log(this.foodsCategory)
+				console.log(this.foodsCategory)
 			})
 			}
 		}
