@@ -45,7 +45,10 @@
             <text class="item-rate">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
             <!-- <text class="item-materials">{{iten.materials}}</text> -->
             <!-- <text class="item-satisfy-rate">{{iten.satisfy_rate}}</text> -->
+						<view class='price-cart-add'>
             <text class="item-lowest-price">{{'￥' + iten.lowest_price}}</text>
+						<img class="item-cart-add-icon" src="../../static/img/icon/cart_add.svg" alt="">
+						</view>
 						</view>
 						</view>
           </block>
@@ -320,5 +323,17 @@ export default {
 		color: #ff5339;
 		font-size: 26rpx;
 	}
+
+	/* 物品添加图标 */
+	.price-cart-add {
+		position: relative;
+	}
+  .item-cart-add-icon {
+		width: 40rpx;
+		height: 40rpx;
+		position: absolute;
+		right: 20rpx;
+		bottom: 4rpx;
+  }
 /*  */
 </style>
