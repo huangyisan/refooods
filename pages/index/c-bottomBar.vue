@@ -29,23 +29,24 @@
 		position: fixed;
 		bottom: 0;
 		width: 100%;
+		background-color: rgba(61,61,63,.9);
 		
 	}
 
 	.bottom-item-left {
-		background-color: #575757;
+		/* background-color: #575757; */
 		/* background-color: #000; */
 		/* opacity:0.3; */
-		flex: 3;
+		flex: 1;
 		
 
 	}
 
 	
 	.bottom-item-right {
-		background-color: #686868;
+		/* background-color: #686868; */
 		/* position: relative; */
-		flex: 1;
+		flex: 4;
 	}
 
 </style>

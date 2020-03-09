@@ -8,16 +8,8 @@
             @click="itemClick(index)"
             :class="{active: index === currentIndex}"
           >
-            <text>{{title}}</text>
+            <text>{{title.trim()}}</text>
           </view>
-          <!-- 				<view class='side-left-item'>2</view>
-			<view class='side-left-item'>3</view>
-			<view class='side-left-item'>4</view>
-			<view class='side-left-item'>5</view>
-			<view class='side-left-item'>6</view>
-			<view class='side-left-item'>7</view>
-			<view class='side-left-item'>8</view>
-          <view class='side-left-item'>9</view>-->
         </block>
       </block>
     </scroll-view>
@@ -91,49 +83,14 @@ export default {
       scrollTop: 0,
       // 存放组件自身高度
       toprpx: [],
-      scrollTopId: "vegetable",
-      vegetables: {
-        category: "川菜",
-        detail: [
-          "麻婆豆腐",
-          "回锅肉",
-          "宫保鸡丁",
-          "夫妻肺片",
-          "蚂蚁上树",
-          "蒜泥白肉",
-          "口水鸡"
-        ]
-      },
-      fruit: {
-        category: "粤菜",
-        detail: [
-          "干炒牛河",
-          "酸甜排骨",
-          "铁板牛肉",
-          "豉油鸡",
-          "云吞面",
-          "广东粥",
-          "烧味"
-        ]
-      },
-      wine: {
-        category: "鲁菜",
-        detail: [
-          "奶汤蒲菜",
-          "糖醋鲤鱼",
-          "爆炒腰花",
-          "锅烧肘子",
-          "干烂虾仁",
-          "油爆肚头"
-        ]
-      }
+      scrollTopId: "vegetable"
     };
   },
   methods: {
     // 左侧点击, 改变样式, 并且同步右侧内容
     itemClick(index) {
       // console.log(index)
-      this.currentIndex = index;
+      this.currentInde5x = index;
       // this.scrollTop = -400
       switch (index) {
         case 0:
@@ -205,7 +162,8 @@ export default {
 
 .side-right-wrapper {
   /* background-color: #829fff; */
-  flex: 3;
+  flex: 4;
+  box-shadow: 0 1px 1px rgba(100,100,100,.1);
 }
 
 .side-left-item {
@@ -220,8 +178,22 @@ export default {
   /* border-bottom: 1px solid #dedede; */
   /*文字14px*/
   font-size: 29rpx;
-  color: #101010;
-  text-align: center;
+  color: #999;
+  padding-left: 2.666667vw;
+  overflow: hidden;
+  /* word-break: break-all; */
+  /* white-space: normal; */
+  /* text-overflow: ellipsis; */
+
+
+}
+
+.side-left-item>text{
+  height: 100%;
+  font-size: 22rpx;
+  /* text-overflow: ellipsis; */
+  /* white-space: normal */
+
 }
 
 .active {
@@ -267,6 +239,7 @@ export default {
   .food-info-wrapper {
 		
     padding: 2.666667vw 0;
+    padding-left: 2.666667vw;
 
     margin-bottom: .133333vw;
 
