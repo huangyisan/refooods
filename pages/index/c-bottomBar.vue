@@ -1,13 +1,18 @@
 <template>
   <view class="bottom-wrapper">
     <view class="bottom-item-left" >
-			<text v-if="item_num" class="shop-cart-items"></text>
+			<view v-if="item_num" class="red-point-fa">
+			  <text class="shop-cart-items"></text>
+				<text class="red-point">{{item_num}}</text>
+			</view>
       <text v-else class="shop-cart-noitem"></text>
 			
 
     </view>
     <view class="bottom-item-right">
-      <text @click="orderButton">立即下单</text>
+			<text v-if="item_num" @click="orderButton" class="order-btn">你命有了</text>
+      <text v-else @click="orderButton">购物车跟你脑子一样空空如也</text>
+			
     </view>
   </view>
 </template>
@@ -16,7 +21,7 @@
 export default {
   data() {
 		return {
-			item_num: 1,
+			item_num: 0,
 		}
 	},
 	methods: {
@@ -86,7 +91,7 @@ export default {
   position: absolute;
   width: 100rpx;
   height: 100rpx;
-  bottom: 10rpx;
+  bottom: -80rpx;
   left: 30rpx;
   box-sizing: border-box;
   border: 1.333333vw solid #444;
@@ -113,7 +118,12 @@ export default {
 }
 
 /* 商品红色小点 */
-.shop-cart-items>text {
+.red-point-fa {
+	position: relative;
+
+}
+.red-point {
+	/* display: inline-block; */
 	position: absolute;
 	top:-30rpx;
 	right:10rpx;
@@ -122,14 +132,20 @@ export default {
   /* right: -1.2vw; */
   /* top: -.133333rem; */
   /* top: -1.333333vw; */
-  line-height: 1;
+	line-height: 1;
+	
   background-image: linear-gradient(-90deg,#ff7416,#ff3c15 98%);
   color: #fff;
   /* border-radius: .32rem; */
   border-radius: 3.2vw;
-  /* padding: .053333rem .133333rem; */
-  /* padding: .533333vw 1.333333vw;	 */
-	font-size: 5rpx;
+  padding: .533333vw 1.333333vw;
+	/* padding: 8rpx 16rpx;	 */
+	/* width: 14rpx; */
+	/* width: 16rpx; */
+	/* max-width: 16rpx; */
+	font-size: 18rpx;
+	/* font-variant-numeric: tabular-nums; */
+	font-family: losevka;
 }
 
 /* 购物车动画效果 */
@@ -151,7 +167,14 @@ export default {
 
 .bottom-item-right text {
   position: absolute;
-  right: 80rpx;
+  right: 10rpx;
   color: #f8f8f8;
+}
+
+.bottom-item-right .order-btn {
+	position: absolute;
+	right: 0;
+	padding: 0 60rpx;
+	background-color: #38ca73;
 }
 </style>
