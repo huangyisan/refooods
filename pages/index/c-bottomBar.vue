@@ -22,7 +22,7 @@
 <style>
 	.bottom-wrapper {
 		display: flex;
-		position: relative;
+		/* position: relative; */
 		height: 88rpx;
 		line-height: 88rpx;
 		text-align: center;

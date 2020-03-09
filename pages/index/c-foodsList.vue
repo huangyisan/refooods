@@ -193,7 +193,7 @@ export default {
 }
 
 .active {
-  color: red;
+  color: #333;
   background-color: #ffffff;
 }
 
@@ -203,7 +203,7 @@ export default {
 }
 
 .side-left-item:active {
-  color: red;
+  color: #333;
 }
 
 /* 右侧栏标题 */
