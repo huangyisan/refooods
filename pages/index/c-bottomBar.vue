@@ -1,10 +1,13 @@
 <template>
   <view class="bottom-wrapper">
-    <view class="bottom-item-left">
-      <text class="shop-cart"></text>
+    <view class="bottom-item-left" >
+			<text v-if="item_num" class="shop-cart-items"></text>
+      <text v-else class="shop-cart-noitem"></text>
+			
+
     </view>
     <view class="bottom-item-right">
-      <text>立即下单</text>
+      <text @click="orderButton">立即下单</text>
     </view>
   </view>
 </template>
@@ -12,8 +15,15 @@
 <script scrop>
 export default {
   data() {
-    return {};
-  }
+		return {
+			item_num: 1,
+		}
+	},
+	methods: {
+		orderButton() {
+			this.item_num += 1;
+		}
+	}
 };
 </script>
 
@@ -36,8 +46,9 @@ export default {
 
 }
 
-.shop-cart {
-  position: relative;
+/* 无商品情况 */
+.shop-cart-noitem {
+  /* position: relative; */
   /* display: inline-block; */
   position: absolute;
   width: 100rpx;
@@ -49,9 +60,11 @@ export default {
   /* 50rpx为宽度的一半 */
   background-image: radial-gradient(circle, #363636 50rpx, #444 0);
   border-radius: 100%;
+	will-change: transform;
+	
 }
 
-.shop-cart:before {
+.shop-cart-noitem:before {
   content: "";
   /* background: url(../../static/img/icon/shop_cart_full.svg) no-repeat; */
   background: url(http://mock.myzone.com/mock/shop_cart_empty.svg) no-repeat;
@@ -60,10 +73,75 @@ export default {
   height: 100%;
   width: 100%;
   z-index: 9;
-  top: 16rpx;
+  top: 20rpx;
   right: 0;
-  left: 16rpx;
+  left: 20rpx;
   right: 0;
+}
+
+/* 有商品情况 */
+.shop-cart-items {
+	/* position: relative; */
+  display: inline-block;
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 10rpx;
+  left: 30rpx;
+  box-sizing: border-box;
+  border: 1.333333vw solid #444;
+	background-color: #3190e8;
+  /* 50rpx为宽度的一半 */
+  /* background-image: radial-gradient(circle, #363636 50rpx, #444 0); */
+  border-radius: 100%;
+	will-change: transform
+}
+
+.shop-cart-items:before {
+  content: "";
+  /* background: url(../../static/img/icon/shop_cart_full.svg) no-repeat; */
+  background: url(http://mock.myzone.com/mock/shop_cart_full.svg) no-repeat;
+  background-size: 50%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  top: 20rpx;
+  right: 0;
+  left: 20rpx;
+  right: 0;
+}
+
+/* 商品红色小点 */
+.shop-cart-items>text {
+	position: absolute;
+	top:-30rpx;
+	right:10rpx;
+
+  /* right: -.12rem; */
+  /* right: -1.2vw; */
+  /* top: -.133333rem; */
+  /* top: -1.333333vw; */
+  line-height: 1;
+  background-image: linear-gradient(-90deg,#ff7416,#ff3c15 98%);
+  color: #fff;
+  /* border-radius: .32rem; */
+  border-radius: 3.2vw;
+  /* padding: .053333rem .133333rem; */
+  /* padding: .533333vw 1.333333vw;	 */
+	font-size: 5rpx;
+}
+
+/* 购物车动画效果 */
+
+.cart-animate {
+	animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
 }
 
 .bottom-item-right {
