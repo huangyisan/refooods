@@ -89,8 +89,9 @@ export default {
   methods: {
     // 左侧点击, 改变样式, 并且同步右侧内容
     itemClick(index) {
-      // console.log(index)
-      this.currentInde5x = index;
+      console.log(index)
+      // console.log(this.currentIndex)
+      this.currentIndex = index;
       // this.scrollTop = -400
       switch (index) {
         case 0:
@@ -156,6 +157,7 @@ export default {
 }
 
 .side-left-wrapper {
+
   /* background-color: #F0AD4E; */
   flex: 1;
 }
@@ -167,32 +169,26 @@ export default {
 }
 
 .side-left-item {
+/* 用flex让text文字居中 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
   background: #f8f8f8;
-  /*每个高30px*/
-  height: 80rpx;
-  /*垂直居中*/
-  line-height: 80rpx;
-  /*再设上下padding增加高度，总高42px*/
-  padding: 15rpx 0;
-  /*只设下边线*/
-  /* border-bottom: 1px solid #dedede; */
-  /*文字14px*/
-  font-size: 29rpx;
+  height: 60rpx;
+  padding: 20rpx 0;
+  font-size: 22rpx;
   color: #999;
-  padding-left: 2.666667vw;
-  overflow: hidden;
-  /* word-break: break-all; */
-  /* white-space: normal; */
-  /* text-overflow: ellipsis; */
-
-
+  /* 换行 */
+  word-break: break-all;
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 
-.side-left-item>text{
-  height: 100%;
-  font-size: 22rpx;
-  /* text-overflow: ellipsis; */
-  /* white-space: normal */
+.side-left-item text{
+  position: absolute;
+  left:10rpx;
+  right:10rpx;
 
 }
 
@@ -212,12 +208,8 @@ export default {
 
 /* 右侧栏标题 */
 .item-title {
-  /* height: 40rpx; */
-  /* text-align: center; */
-  /* text-align: 40rpx; */
 	padding: 2vw 8vw 2vw 0;
 	margin-left: 2.666667vw;
-  /* padding-bottom: 40rpx; */
 }
 
 .title-content {
