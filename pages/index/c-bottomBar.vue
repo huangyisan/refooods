@@ -33,8 +33,7 @@ export default {
   created() {
       this.debounceAnimate = debounce(() => {
         this.animate = false
-        console.log(this.animate)
-      }, 1000)
+      },  1000)
     },
   
 
