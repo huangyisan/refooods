@@ -17,21 +17,33 @@
 </template>
 
 <script scrop>
+
+// 防抖动函数
+import {debounce} from '../../utils/js/debounce'
+
+
 export default {
   data() {
 		return {
       item_num: 0,
       animate: false,
+      debounceAnimate: null,
 		}
-	},
+  },
+  created() {
+      this.debounceAnimate = debounce(() => {
+        this.animate = false
+        console.log(this.animate)
+      }, 1000)
+    },
+  
+
 	methods: {
 		orderButton() {
       this.item_num += 1;
       this.animate = true;
-      setTimeout(() => {
-        this.animate = false
-      },500)
-		}
+      this.debounceAnimate()
+    }
 	}
 };
 </script>
