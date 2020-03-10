@@ -15,3 +15,4 @@ http://mock.myzone.com/mock/foodsinfo.json
 
 ## Todo
 1. + 点击追加食物.
+2. hover修改伪类
