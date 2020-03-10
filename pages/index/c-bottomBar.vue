@@ -1,10 +1,10 @@
 <template>
   <view class="bottom-wrapper">
     <view class="bottom-item-left" >
-			  <text v-if="item_num" class="shop-cart-items">
+			  <text v-if="item_num" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}">
           <text class="red-point">{{item_num}}</text>
         </text>
-      <text v-else class="shop-cart-noitem"></text>
+      <text v-else class="shop-cart-noitem" :class="{animated:animate, heartBeat: animate}"></text>
 			
 
     </view>
@@ -20,12 +20,17 @@
 export default {
   data() {
 		return {
-			item_num: 0,
+      item_num: 0,
+      animate: false,
 		}
 	},
 	methods: {
 		orderButton() {
-			this.item_num += 1;
+      this.item_num += 1;
+      this.animate = true;
+      setTimeout(() => {
+        this.animate = false
+      },500)
 		}
 	}
 };

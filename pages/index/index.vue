@@ -117,5 +117,5 @@
 </script>
 
 <style>
-	@import '../../utils/css/base.css';
+	
 </style>
