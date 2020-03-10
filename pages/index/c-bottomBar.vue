@@ -1,10 +1,9 @@
 <template>
   <view class="bottom-wrapper">
     <view class="bottom-item-left" >
-			<view v-if="item_num" class="red-point-fa">
-			  <text class="shop-cart-items"></text>
-				<text class="red-point">{{item_num}}</text>
-			</view>
+			  <text v-if="item_num" class="shop-cart-items">
+          <text class="red-point">{{item_num}}</text>
+        </text>
       <text v-else class="shop-cart-noitem"></text>
 			
 
@@ -91,7 +90,7 @@ export default {
   position: absolute;
   width: 100rpx;
   height: 100rpx;
-  bottom: -80rpx;
+  bottom: 10rpx;
   left: 30rpx;
   box-sizing: border-box;
   border: 1.333333vw solid #444;
@@ -118,34 +117,16 @@ export default {
 }
 
 /* 商品红色小点 */
-.red-point-fa {
-	position: relative;
-
-}
 .red-point {
-	/* display: inline-block; */
 	position: absolute;
-	top:-30rpx;
-	right:10rpx;
-
-  /* right: -.12rem; */
-  /* right: -1.2vw; */
-  /* top: -.133333rem; */
-  /* top: -1.333333vw; */
+	top:-10rpx;
+	right:-10rpx;
 	line-height: 1;
-	
   background-image: linear-gradient(-90deg,#ff7416,#ff3c15 98%);
   color: #fff;
-  /* border-radius: .32rem; */
   border-radius: 3.2vw;
   padding: .533333vw 1.333333vw;
-	/* padding: 8rpx 16rpx;	 */
-	/* width: 14rpx; */
-	/* width: 16rpx; */
-	/* max-width: 16rpx; */
 	font-size: 18rpx;
-	/* font-variant-numeric: tabular-nums; */
-	font-family: losevka;
 }
 
 /* 购物车动画效果 */
