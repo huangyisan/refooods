@@ -11,4 +11,7 @@ http://mock.myzone.com/mock/foodsinfo.json
 ## 想记录的笔记
 1. animation的实现
 2. 定位
-3. 
+3. 防抖动
+
+## Todo
+1. + 点击追加食物.
