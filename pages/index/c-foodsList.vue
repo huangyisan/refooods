@@ -30,7 +30,7 @@
 						</view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
 						<view class="food-info-wrapper">
-						<img class="item-pic" :src="iten.img" alt="">
+						<img class="item-pic" :src="iten.img" alt="" lazy-load=true>
 						<view class="food-info">
             <text class="item-name">{{iten.name}}</text>
             <text class="item-des">{{iten.description.trim()}}</text>
