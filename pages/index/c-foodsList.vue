@@ -1,5 +1,5 @@
 <template>
-  <view class="foods-wrapper">
+  <view class="foods-wrapper" id="ccc">
     <scroll-view scroll-y="true" class="side-left-wrapper">
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
@@ -24,10 +24,10 @@
     >
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
-          <view class="item-title">
+          <view class="item-title" id="title">
 						<text class="title-content">{{title + ' '}}</text>
 						<text class="title-des">{{des}}</text>
-						</view>
+					</view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
 						<view class="food-info-wrapper">
 						<img class="item-pic" :src="iten.img" alt="" lazy-load=true>
@@ -100,12 +100,17 @@ export default {
 
     getToprpx(selector) {
       console.log(105)
-      let view = this.createSelectorQuery().select(selector)
-      console.log(view)
-    	view.boundingClientRect(data => {
-        console.log(data)
-    		// this.toprpx.push(data.top)
-    	}).exec();
+      // const view = this.createSelectorQuery().select(selector)
+      // console.log(view)
+    	// view.boundingClientRect(data => {
+      //   console.log(data)
+    	// 	// this.toprpx.push(data.top)
+      // }).exec();
+      const query = uni.createSelectorQuery().in(this);
+      query.select(selector).boundingClientRect(data => {
+        console.log("得到布局位置信息" + JSON.stringify(data));
+        // console.log("节点离页面顶部的距离为" + data.top);
+      }).exec();
 
     },
 
@@ -131,13 +136,20 @@ export default {
   },
 
   mounted() {
-    this.getToprpx(".item-title");
+    setTimeout(() => {
+      this.getToprpx("#title");
+    },2000)
+    
+    
     // this.getToprpx("#人气搭配 誉村套餐");
     // this.getToprpx("#热销");
 
-    console.log(this.foodsCategory);
-    console.log(this.testMessage);
-    console.log(this.toprpx);
+    // console.log(this.foodsCategory);
+    // console.log(this.testMessage);
+    // console.log(this.toprpx);
+  },
+  onReady() {
+    
   }
 };
 </script>
