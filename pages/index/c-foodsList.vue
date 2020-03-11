@@ -202,10 +202,6 @@ export default {
   background-color: #007aff;
 }
 
-.side-left-item:active {
-  color: #333;
-}
-
 /* 右侧栏标题 */
 .item-title {
 	padding: 2vw 8vw 2vw 0;
