@@ -30,7 +30,7 @@
 					</view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
 						<view class="food-info-wrapper">
-						<img class="item-pic" :src="iten.img" alt="" lazy-load=true>
+						<image class="item-pic" :src="iten.img" alt="" lazy-load=true @load="ifLoad">
 						<view class="food-info">
             <text class="item-name">{{iten.name}}</text>
             <text class="item-des">{{iten.description.trim()}}</text>
@@ -39,7 +39,7 @@
             <!-- <text class="item-satisfy-rate">{{iten.satisfy_rate}}</text> -->
 						<view class='price-cart-add'>
             <text class="item-lowest-price">{{'￥' + iten.lowest_price}}</text>
-						<img class="item-cart-add-icon" src="../../static/img/icon/cart_add.svg" alt="">
+						<image class="item-cart-add-icon" src="../../static/img/icon/cart_add.svg" alt="">
 						</view>
 						</view>
 						</view>
@@ -132,17 +132,21 @@ export default {
         this.currentIndex = 2;
         this.scrollTopId = "default";
       }
+    },
+
+    ifLoad(){
+      this.getToprpx("#title");
     }
   },
 
-  mounted: function() {
+  mounted() {
     // this.$nextTick(() => {
     //   // this.getToprpx("#title");
     //   this.getToprpx("#热销");
     // })
-    setTimeout(() => {
-      this.getToprpx("#title");
-    },2000)
+    // setTimeout(() => {
+    //   this.getToprpx("#title");
+    // },2000)
     
     
     // this.getToprpx("#人气搭配 誉村套餐");
