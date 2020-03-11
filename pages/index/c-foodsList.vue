@@ -74,11 +74,6 @@ export default {
   },
   data() {
     return {
-      wFoodsCategory: this.foodsCategory,
-      wFoods: this.foods,
-      lFoodsCategory: [],
-      lFoods: {},
-
       currentIndex: 0,
       scrollTop: 0,
       // 存放组件自身高度
@@ -146,6 +141,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .foods-wrapper {
   display: flex;
   flex-direction: row;
