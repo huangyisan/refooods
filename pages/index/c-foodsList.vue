@@ -107,7 +107,7 @@ export default {
     	// 	// this.toprpx.push(data.top)
       // }).exec();
       const query = uni.createSelectorQuery().in(this);
-      query.select(selector).boundingClientRect(data => {
+      query.selectAll(selector).boundingClientRect(data => {
         console.log("得到布局位置信息" + JSON.stringify(data));
         // console.log("节点离页面顶部的距离为" + data.top);
       }).exec();
@@ -135,22 +135,23 @@ export default {
     }
   },
 
-  mounted() {
+  mounted: function() {
+    // this.$nextTick(() => {
+    //   // this.getToprpx("#title");
+    //   this.getToprpx("#热销");
+    // })
     setTimeout(() => {
       this.getToprpx("#title");
     },2000)
     
     
     // this.getToprpx("#人气搭配 誉村套餐");
-    // this.getToprpx("#热销");
+    // 
 
     // console.log(this.foodsCategory);
     // console.log(this.testMessage);
     // console.log(this.toprpx);
   },
-  onReady() {
-    
-  }
 };
 </script>
 
