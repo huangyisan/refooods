@@ -97,6 +97,8 @@
 							satisfy_rate: info.satisfy_rate,
 							lowest_price: info.lowest_price,
 							img: info.image_path,
+							py_name: info.pinyin_name,
+
 							})
 					}
 				}

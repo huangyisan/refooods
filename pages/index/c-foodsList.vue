@@ -97,17 +97,21 @@ export default {
           this.scrollTopId = "wine";
       }
     },
-    // getToprpx(selector) {
-    // 	let view = this.createSelectorQuery().select(selector)
-    // 	view.boundingClientRect(data => {
-    // 		this.toprpx.push(data.top)
-    // 	}).exec();
 
-    // },
+    getToprpx(selector) {
+      console.log(105)
+      let view = this.createSelectorQuery().select(selector)
+      console.log(view)
+    	view.boundingClientRect(data => {
+        console.log(data)
+    		// this.toprpx.push(data.top)
+    	}).exec();
+
+    },
 
     // 监听滚动
     scrollInfo(position) {
-      // console.log(this.foods);
+      console.log(this.toprpx);
       let gapOne = this.toprpx[1] - this.toprpx[0];
       let gapTow = this.toprpx[2] - this.toprpx[0];
       if (position.target.scrollTop < gapOne) {
@@ -127,9 +131,9 @@ export default {
   },
 
   mounted() {
-    this.getToprpx(".vegetables");
-    this.getToprpx(".fruit");
-    this.getToprpx(".wine");
+    this.getToprpx(".item-title");
+    // this.getToprpx("#人气搭配 誉村套餐");
+    // this.getToprpx("#热销");
 
     console.log(this.foodsCategory);
     console.log(this.testMessage);
