@@ -51,11 +51,9 @@
 </template>
 
 <script>
-import foodItem from "../../components/foodItem.vue";
 
 export default {
   components: {
-    foodItem
   },
   props: {
     foodsCategory: {
