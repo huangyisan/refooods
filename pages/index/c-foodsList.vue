@@ -2,35 +2,37 @@
 	<view class='foods-wrapper'>
 
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
-			<block v-for='(item,index) in foodsInfo' :key='item.category'>
-				<view class='side-left-item' @click="itemClick(index)" :class="{active: index === currentIndex}">
+			<block v-for='(item,index) in foodsInfo' :key='index'>
+				<view  :data-index="index" class='side-left-item inner' @click="clickwxs.tapName">
 					<text>{{item.category}}</text>
 				</view>
-				<!-- 				<view class='side-left-item'>2</view>
-			<view class='side-left-item'>3</view>
-			<view class='side-left-item'>4</view>
-			<view class='side-left-item'>5</view>
-			<view class='side-left-item'>6</view>
-			<view class='side-left-item'>7</view>
-			<view class='side-left-item'>8</view>
-			<view class='side-left-item'>9</view> -->
+
 			</block>
-		</scroll-view>
-
-
-		<scroll-view scroll-y="true" class='side-right-wrapper' :scroll-into-view="scrollTopId" :scroll-top="scrollTop" scroll-with-animation="true">
-				<view class="vegetables" id='vegetables'>
-					<food-item :foods="vegetables"></food-item>
-				</view>
-				<view class="fruit" id='fruit'>
-					<food-item :foods="fruit"></food-item>
-				</view>
-				<view class="wine" id='wine'>
-					<food-item :foods="wine"></food-item>
-				</view>
 		</scroll-view>
 	</view>
 </template>
+
+<script module="clickwxs" lang="wxs">
+function tapName(event, ins) {
+	console.log(event.currentTarget.dataset.index)
+	console.log(JSON.stringify(event))
+  var owner = ins.selectAllComponents('.side-left-item')
+  console.log(owner)
+  for (var i = 0; i < owner.length; i++) {
+    owner[i].removeClass('active');
+    console.log('.inner' + i)
+  }
+	var instance = ins.selectComponent('.inner' + event.currentTarget.dataset.index)
+	// var instance = ins.selectComponent('.inner')
+	console.log(instance)
+  instance.addClass('active')
+  instance.getDataset()
+  console.log('done')
+}
+module.exports = {
+  tapName: tapName
+}
+</script>
 
 <script>
 	import foodItem from '../../components/foodItem.vue'
@@ -71,30 +73,12 @@
 			itemClick(index) {
 				console.log(this.toprpx)
 				this.currentIndex = index
-				// this.scrollTop = -400
-				switch(index) {
-					case 0:
-					this.scrollTopId = 'vegetables'
-					break;
-					case 1:
-					this.scrollTopId = 'fruit'
-					break;
-					case 2:
-					this.scrollTopId = 'wine' 
-				}
-			},
-			getToprpx(selector) {
-				let view = this.createSelectorQuery().select(selector)
-				view.boundingClientRect(data => {
-					this.toprpx.push(data.top)
-				}).exec();
 
 			},
-
-			onReady() {
-				this.getToprpx('.vegetables')
-				this.getToprpx('.fruit')
-				console.log(this.toprpx)
+		},
+		computed:{
+			inner(index) {
+				return `inner${index}`
 			}
 		}
 	}
@@ -123,7 +107,7 @@
 	}
 
 	.side-left-item {
-		background: #f8f8f8;
+		/* background: #f8f8f8; */
 		/*每个高30px*/
 		height: 80rpx;
 		/*垂直居中*/
@@ -155,7 +139,7 @@
 
 	.active {
 		color: red;
-		background-color: #FFFFFF;
+		/* background-color: #FFFFFF; */
 	}
 
 	.mytext {
