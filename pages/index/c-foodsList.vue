@@ -163,7 +163,4 @@
 		background-color: #007AFF;
 	}
 
-	.side-left-item:active {
-		color: red
-	}
 </style>
