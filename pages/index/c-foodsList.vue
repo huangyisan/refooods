@@ -3,7 +3,7 @@
 
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
 			<block v-for='(item,index) in foodsInfo' :key='index'>
-				<view :data-index="index" class='side-left-item inner_{{index}}' @click="clickwxs.tapName">
+				<view :data-index="index" :class='["side-left-item", "inner_" + index]' @click="clickwxs.tapName">
 					<text>{{item.category}}</text>
 				</view>
 
@@ -27,7 +27,8 @@ function tapName(event, ins) {
 	console.log(instance)
   instance.addClass('active')
   instance.getDataset()
-  console.log('done')
+	console.log('done')
+	// instance.callMethod("printInfo",{"info":"1111"})
 }
 module.exports = {
   tapName: tapName
@@ -75,6 +76,9 @@ module.exports = {
 				this.currentIndex = index
 
 			},
+			printInfo(info) {
+				console.log(info)
+			}
 		},
 		computed:{
 			inner(index) {
