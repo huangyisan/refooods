@@ -3,7 +3,7 @@
 
 		<scroll-view scroll-y="true" class='side-left-wrapper'>
 			<block v-for='(item,index) in foodsInfo' :key='index'>
-				<view  :data-index="index" class='side-left-item inner' @click="clickwxs.tapName">
+				<view :data-index="index" class='side-left-item inner_{{index}}' @click="clickwxs.tapName">
 					<text>{{item.category}}</text>
 				</view>
 
@@ -22,7 +22,7 @@ function tapName(event, ins) {
     owner[i].removeClass('active');
     console.log('.inner' + i)
   }
-	var instance = ins.selectComponent('.inner' + event.currentTarget.dataset.index)
+	var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
 	// var instance = ins.selectComponent('.inner')
 	console.log(instance)
   instance.addClass('active')
@@ -107,7 +107,7 @@ module.exports = {
 	}
 
 	.side-left-item {
-		/* background: #f8f8f8; */
+		background: #f8f8f8;
 		/*每个高30px*/
 		height: 80rpx;
 		/*垂直居中*/
@@ -139,7 +139,7 @@ module.exports = {
 
 	.active {
 		color: red;
-		/* background-color: #FFFFFF; */
+		background-color: #FFFFFF;
 	}
 
 	.mytext {
