@@ -4,7 +4,7 @@
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
           <!-- 第一个元素展现样式 -->
-          <view v-if="currentIndex === index"
+          <view v-if="index === 0"
             :class='["side-left-item", "active", "inner_" + index]'
             :data-index="index"
             @click="leftItem.btnClick"
@@ -69,7 +69,7 @@
     }
     var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
     instance.addClass('active')
-    instance.callMethod('resetCurrentIndex')
+    // instance.callMethod('resetCurrentIndex')
     
     // instance.getDataset()
   }
@@ -126,9 +126,9 @@ export default {
           this.scrollTopId = "wine";
       }
     },
-    resetCurrentIndex(){
-      this.currentIndex = null
-    },
+    // resetCurrentIndex(){
+    //   this.currentIndex = null
+    // },
 
     getToprpx(selector) {
       console.log(105)
