@@ -87,7 +87,7 @@ export default {
 .shop-cart-noitem:before {
   content: "";
   /* background: url(../../static/img/icon/shop_cart_full.svg) no-repeat; */
-  background: url(http://mock.kirakirazone.com:65511/mock/shop_cart_empty.svg) no-repeat;
+  background: url(https://mock.kirakirazone.com/mock/shop_cart_empty.svg) no-repeat;
   background-size: 50%;
   position: absolute;
   height: 100%;
