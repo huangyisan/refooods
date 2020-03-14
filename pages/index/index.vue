@@ -50,7 +50,7 @@
 			cFoodsList,
 			cBottomBar,
 		},
-	created() {
+	onShow() {
 		this.selfGetFoodsInfo()
 		},
 

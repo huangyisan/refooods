@@ -27,7 +27,7 @@ export default {
 		return {
       item_num: 0,
       animate: false,
-      debounceAnimate: Function,
+      debounceAnimate: null,
 		}
   },
   created() {
@@ -38,11 +38,12 @@ export default {
   
 
 	methods: {
-		orderButton() {
+	orderButton() {
       this.item_num += 1;
       this.animate = true;
       this.debounceAnimate()
-    }
+    },
+	
 	}
 };
 </script>
@@ -86,7 +87,7 @@ export default {
 
 .shop-cart-noitem:before {
   content: "";
-  /* background: url(../../static/img/icon/shop_cart_full.svg) no-repeat; */
+  /* background: url(require("../../static/img/icon/shop_cart_full.svg")) no-repeat; */
   background: url(https://mock.kirakirazone.com/mock/shop_cart_empty.svg) no-repeat;
   background-size: 50%;
   position: absolute;
@@ -120,7 +121,7 @@ export default {
 .shop-cart-items:before {
   content: "";
   /* background: url(../../static/img/icon/shop_cart_full.svg) no-repeat; */
-  background: url(http://mock.myzone.com/mock/shop_cart_full.svg) no-repeat;
+  background: url(https://mock.kirakirazone.com/mock/shop_cart_full.svg) no-repeat;
   background-size: 50%;
   position: absolute;
   height: 100%;
