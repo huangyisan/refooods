@@ -42,7 +42,7 @@ class Request {
 }
 
 const request = new Request({
-	baseURL: 'http://mock.myzone.com/',
+	baseURL: 'http://mock.myzone.com:65511',
 	api: '/mock',
 })
 

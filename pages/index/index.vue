@@ -113,6 +113,8 @@
 				console.log('我是index组件,emit事件')
 				console.log(this.foods)
 				console.log(this.foodsCategory)
+			}).catch(e => {
+				console.log(e)
 			})
 			}
 		}
