@@ -4,9 +4,9 @@
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
           <view
-            class="side-left-item"
-            @click="itemClick(index)"
-            :class="{active: index === currentIndex}"
+            :class='["side-left-item", "inner_" + index]'
+            :data-index="index"
+            @click="leftItem.btnClick"
           >
             <text>{{title.trim()}}</text>
           </view>
@@ -49,6 +49,23 @@
     </scroll-view>
   </view>
 </template>
+
+<script module="leftItem" lang="wxs">
+
+  function btnClick(event, ins) {
+    var owner = ins.selectAllComponents('.side-left-item')
+    for (var i = 0; i < owner.length; i++) {
+      owner[i].removeClass('active');
+    }
+    var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
+    instance.addClass('active')
+    // instance.getDataset()
+  }
+  module.exports = {
+    btnClick: btnClick
+  }
+
+</script>
 
 <script>
 
