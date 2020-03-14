@@ -63,15 +63,11 @@
 
   function btnClick(event, ins) {
     var owner = ins.selectAllComponents('.side-left-item')
-    console.log(owner)
     for (var i = 0; i < owner.length; i++) {
       owner[i].removeClass('active');
     }
     var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
     instance.addClass('active')
-    // instance.callMethod('resetCurrentIndex')
-    
-    // instance.getDataset()
   }
   module.exports = {
     btnClick: btnClick
