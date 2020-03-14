@@ -3,7 +3,16 @@
     <scroll-view scroll-y="true" class="side-left-wrapper">
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
-          <view
+          <!-- 第一个元素展现样式 -->
+          <view v-if="currentIndex === index"
+            :class='["side-left-item", "active", "inner_" + index]'
+            :data-index="index"
+            @click="leftItem.btnClick"
+          >
+            <text>{{title.trim()}}</text>
+          </view>
+
+          <view v-else
             :class='["side-left-item", "inner_" + index]'
             :data-index="index"
             @click="leftItem.btnClick"
@@ -54,11 +63,14 @@
 
   function btnClick(event, ins) {
     var owner = ins.selectAllComponents('.side-left-item')
+    console.log(owner)
     for (var i = 0; i < owner.length; i++) {
       owner[i].removeClass('active');
     }
     var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
     instance.addClass('active')
+    instance.callMethod('resetCurrentIndex')
+    
     // instance.getDataset()
   }
   module.exports = {
@@ -113,6 +125,9 @@ export default {
         case 2:
           this.scrollTopId = "wine";
       }
+    },
+    resetCurrentIndex(){
+      this.currentIndex = null
     },
 
     getToprpx(selector) {
