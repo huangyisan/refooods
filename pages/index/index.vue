@@ -100,7 +100,7 @@
 							py_name: info.pinyin_name,
 
 							})
-							console.log(info.image_path)
+							// console.log(info.image_path)
 					}
 				}
 				// 将foodDict赋值给this.foodsCategory
@@ -109,11 +109,7 @@
 
 				// 通过事件总线发射foods属性出去
 			// console.log(EventBus)
-			EventBus.$emit('food', this.foods
-			)
-				console.log('我是index组件,emit事件')
-				console.log(this.foods)
-				console.log(this.foodsCategory)
+			// EventBus.$emit('food', this.foods)
 			}).catch(e => {
 				console.log(e)
 			})

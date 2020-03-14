@@ -107,7 +107,6 @@ export default {
   methods: {
     // 左侧点击, 改变样式, 并且同步右侧内容
     itemClick(index) {
-      console.log(index)
       // console.log(this.currentIndex)
       this.currentIndex = index;
       // this.scrollTop = -400
@@ -127,7 +126,6 @@ export default {
     // },
 
     getToprpx(selector) {
-      console.log(105)
       // const view = this.createSelectorQuery().select(selector)
       // console.log(view)
     	// view.boundingClientRect(data => {
@@ -136,7 +134,7 @@ export default {
       // }).exec();
       const query = uni.createSelectorQuery().in(this);
       query.selectAll(selector).boundingClientRect(data => {
-        console.log("得到布局位置信息" + JSON.stringify(data));
+        // console.log("得到布局位置信息" + JSON.stringify(data));
         // console.log("节点离页面顶部的距离为" + data.top);
       }).exec();
 
