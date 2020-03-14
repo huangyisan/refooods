@@ -100,6 +100,7 @@
 							py_name: info.pinyin_name,
 
 							})
+							console.log(info.image_path)
 					}
 				}
 				// 将foodDict赋值给this.foodsCategory
