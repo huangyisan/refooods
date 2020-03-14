@@ -19,6 +19,7 @@ class Request {
 				fail(info) {
 					reject({
 						msg: '请求失败',
+						info: info,
 						// 这边不能用this. 因为this的域已经不在class Request里了
 						url: vm.baseURL + vm.api + url,
 						method,
@@ -42,7 +43,7 @@ class Request {
 }
 
 const request = new Request({
-	baseURL: 'http://mock.myzone.com:65511',
+	baseURL: 'http://mock.kirakirazone.com:65511',
 	api: '/mock',
 })
 

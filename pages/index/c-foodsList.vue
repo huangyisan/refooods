@@ -144,7 +144,7 @@ export default {
 
     // 监听滚动
     scrollInfo(position) {
-      console.log(this.toprpx);
+      // console.log(this.toprpx);
       let gapOne = this.toprpx[1] - this.toprpx[0];
       let gapTow = this.toprpx[2] - this.toprpx[0];
       if (position.target.scrollTop < gapOne) {

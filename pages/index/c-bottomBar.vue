@@ -27,7 +27,7 @@ export default {
 		return {
       item_num: 0,
       animate: false,
-      debounceAnimate: null,
+      debounceAnimate: Function,
 		}
   },
   created() {
