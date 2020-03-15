@@ -1,7 +1,7 @@
 <template>
   <view class="bottom-wrapper">
     <view class="bottom-item-left" >
-			  <text v-if="item_num" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}">
+			  <text v-if="cartStatus" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}">
           <text class="red-point">{{item_num}}</text>
         </text>
       <text v-else class="shop-cart-noitem" :class="{animated:animate, heartBeat: animate}"></text>
@@ -9,12 +9,53 @@
 
     </view>
     <view class="bottom-item-right">
-			<text v-if="item_num" @click="orderButton" class="order-btn">你命有了</text>
-      <text v-else @click="orderButton">购物车跟你脑子一样空空如也</text>
+			<text v-if="cartStatus" @click="cartAnimation.orderButton" class="order-btn" :data-status="cartStatus">你命有了</text>
+      <text v-else @click="cartAnimation.orderButton" :data-status="cartStatus">购物车跟你脑子一样空空如也</text>
 			
     </view>
   </view>
 </template>
+
+<script module="cartAnimation" lang="wxs">
+
+  function orderButton(event, ins) {
+    // 先判断当前cartStatus状况,根据状况选择不同class选择器
+    var cartStatus = event.currentTarget.dataset.status
+    // a = ins.callMethod('setCartStatusTrue')
+    console.log(cartStatus)
+    console.log(JSON.stringify(event))
+    if (cartStatus) {
+      var instance = ins.selectComponent('.shop-cart-items')
+      instance.removeClass('animated')
+      instance.removeClass('heartBeat')
+      console.log('我是有,删除')
+      instance.addClass('animated heartBeat')
+      // instance.addClass('heartBeat')
+
+
+    }else{
+      var instance = ins.selectComponent('.shop-cart-noitem')
+      instance.removeClass('animated')
+      instance.removeClass('heartBeat')
+      instance.addClass('animated heartBeat')
+      // instance.removeClass('shop-cart-noitem')
+      // instance.addClass('shop-cart-items')
+    }
+
+    ins.callMethod('setCartStatusTrue')
+
+
+    
+    // instance2.removeClass('animated')
+    // instance2.removeClass('heartBeat')
+    
+  }
+  module.exports = {
+    orderButton: orderButton
+  }
+
+</script>
+
 
 <script scrop>
 
@@ -28,6 +69,8 @@ export default {
       item_num: 0,
       animate: false,
       debounceAnimate: null,
+      // 控制底栏购物车行为
+      cartStatus: false,
 		}
   },
   created() {
@@ -35,15 +78,19 @@ export default {
         this.animate = false
       },  1000)
     },
-  
 
 	methods: {
-	orderButton() {
-      this.item_num += 1;
-      this.animate = true;
-      this.debounceAnimate()
-    },
-	
+	// orderButton() {
+  //     this.item_num += 1;
+  //     this.animate = true;
+  //     this.debounceAnimate()
+  //   },
+  setCartStatusTrue() {
+      // console.log(this.isItem)
+      this.cartStatus = true
+      this.item_num += 1
+    
+    }
 	}
 };
 </script>

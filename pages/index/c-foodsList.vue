@@ -67,6 +67,7 @@
       owner[i].removeClass('active');
     }
     var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
+    console.log(JSON.stringify(instance))
     instance.addClass('active')
   }
   module.exports = {
