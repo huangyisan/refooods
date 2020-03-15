@@ -1,43 +1,61 @@
 <template>
   <view class="bottom-wrapper">
     <view class="bottom-item-left" >
-			  <text v-if="cartStatus" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}">
+			  <!-- <text v-if="cartStatus" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}"> -->
+          <text v-if="cartStatus" class="shop-cart-items">
           <text class="red-point">{{item_num}}</text>
+          <!-- <text class="red-point">{{cartAnimation.itemNum(item_num)}}</text> -->
         </text>
-      <text v-else class="shop-cart-noitem" :class="{animated:animate, heartBeat: animate}"></text>
+      <!-- <text v-else class="shop-cart-noitem" :class="{animated:animate, heartBeat: animate}"></text> -->
+      <text v-else class="shop-cart-noitem"></text>
 			
 
     </view>
     <view class="bottom-item-right">
-			<text v-if="cartStatus" @click="cartAnimation.orderButton" class="order-btn" :data-status="cartStatus">你命有了</text>
-      <text v-else @click="cartAnimation.orderButton" :data-status="cartStatus">购物车跟你脑子一样空空如也</text>
+			<text v-if="cartStatus" @click="cartAnimation.orderButton" class="order-btn" :data-status="cartStatus" :data-itemnum="item_num">你命有了</text>
+      <text v-else @click="cartAnimation.orderButton" :data-status="cartStatus" :data-itemnum="item_num">购物车跟你脑子一样空空如也</text>
 			
     </view>
   </view>
 </template>
 
 <script module="cartAnimation" lang="wxs">
+  
+  // var itemNum = function(item_num) {
+  //   return item_num
+  // }
+  
+
 
   function orderButton(event, ins) {
+    // var scrollTimeout
+    
     // 先判断当前cartStatus状况,根据状况选择不同class选择器
     var cartStatus = event.currentTarget.dataset.status
     // a = ins.callMethod('setCartStatusTrue')
-    console.log(cartStatus)
     console.log(JSON.stringify(event))
     if (cartStatus) {
       var instance = ins.selectComponent('.shop-cart-items')
-      instance.removeClass('animated')
-      instance.removeClass('heartBeat')
+      // instance.removeClass('animated')
+      // instance.removeClass('heartBeat')
       console.log('我是有,删除')
       instance.addClass('animated heartBeat')
+      // scrollTimeout = setTimeout(function(){
+      //   instance.removeClass('animated')
+      //   instance.removeClass('heartBeat')
+      // }, 1000);
       // instance.addClass('heartBeat')
 
 
     }else{
       var instance = ins.selectComponent('.shop-cart-noitem')
-      instance.removeClass('animated')
-      instance.removeClass('heartBeat')
+      // instance.removeClass('animated')
+      // instance.removeClass('heartBeat')
       instance.addClass('animated heartBeat')
+      // scrollTimeout = setTimeout(function(){
+      //   instance.removeClass('animated')
+      //   instance.removeClass('heartBeat')
+      // }, 1000);
       // instance.removeClass('shop-cart-noitem')
       // instance.addClass('shop-cart-items')
     }
@@ -51,7 +69,8 @@
     
   }
   module.exports = {
-    orderButton: orderButton
+    orderButton: orderButton,
+    // itemNum: itemNum
   }
 
 </script>
@@ -76,19 +95,27 @@ export default {
   created() {
       this.debounceAnimate = debounce(() => {
         this.animate = false
+        console.log(this.animate+'1111')
       },  1000)
     },
 
 	methods: {
-	// orderButton() {
-  //     this.item_num += 1;
-  //     this.animate = true;
-  //     this.debounceAnimate()
-  //   },
+	orderButton() {
+      // this.item_num += 1;
+      this.animate = true;
+      this.debounceAnimate()
+    },
   setCartStatusTrue() {
       // console.log(this.isItem)
       this.cartStatus = true
       this.item_num += 1
+      this.animate = true;
+      setTimeout(() => {
+        this.animate = false;
+      },1000)
+      // this.debounceAnimate()
+      console.log(this.animate)
+      console.log(this.item_num)
     
     }
 	}
