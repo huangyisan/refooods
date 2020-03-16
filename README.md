@@ -15,7 +15,7 @@ http://mock.myzone.com/mock/foodsinfo.json
 3. 防抖动
 
 ## Todo
-1. + 点击追加食物.
+1. + 点击追加食物. watch list
 2. ~~hover修改伪类~~
 3. 域名独立，直接拼接即可。包括image标签
 4. 右边联动

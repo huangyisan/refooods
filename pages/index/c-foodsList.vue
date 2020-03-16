@@ -103,7 +103,7 @@ export default {
       // 存放组件自身高度
       toprpx: [],
       scrollTopId: "vegetable",
-      cartList: [],
+      cartList: {},
     };
   },
   methods: {
@@ -125,10 +125,19 @@ export default {
     },
     // + 图片点击追加
     foodAdd(event) {
-        console.log(event.currentTarget.dataset.info)
-        let item_name, item_id, item_price
-        [item_name, item_id, item_price] = event.currentTarget.dataset.info
-        console.log(item_id)
+        // let num = 0
+        let itemName, itemId, itemPrice, itemNum, isFood
+        [itemName, itemId, itemPrice, itemNum] = event.currentTarget.dataset.info
+        isFood = this.cartList[itemId]
+        console.log(this.cartList[itemId])
+        if (isFood){
+          itemNum = isFood.item_num
+          itemNum += 1
+        }else{
+          itemNum = 1
+        }
+        this.cartList[itemId] = {item_name: itemName, item_price: itemPrice, item_num:itemNum, item_id: itemId}
+        console.log(this.cartList)
     },
 
     // resetCurrentIndex(){
