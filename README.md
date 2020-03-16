@@ -18,6 +18,7 @@ http://mock.myzone.com/mock/foodsinfo.json
 1. + 点击追加食物.
 2. ~~hover修改伪类~~
 3. 域名独立，直接拼接即可。包括image标签
+4. 右边联动
 
 ## 遇到的几个坑
 1. promise 异常需要catch

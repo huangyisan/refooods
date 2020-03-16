@@ -48,7 +48,8 @@
             <!-- <text class="item-satisfy-rate">{{iten.satisfy_rate}}</text> -->
 						<view class='price-cart-add'>
             <text class="item-lowest-price">{{'￥' + iten.lowest_price}}</text>
-						<image class="item-cart-add-icon" src="../../static/img/icon/cart_add.svg" alt="">
+            <!-- 点击后追加购物车 -->
+						<image class="item-cart-add-icon" src="../../static/img/icon/cart_add.svg" alt="" :data-info='[iten.name, iten.item_id, iten.lowest_price]' @click="foodAdd">		
 						</view>
 						</view>
 						</view>
@@ -67,7 +68,6 @@
       owner[i].removeClass('active');
     }
     var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
-    console.log(JSON.stringify(instance))
     instance.addClass('active')
   }
   module.exports = {
@@ -102,7 +102,8 @@ export default {
       scrollTop: 0,
       // 存放组件自身高度
       toprpx: [],
-      scrollTopId: "vegetable"
+      scrollTopId: "vegetable",
+      cartList: [],
     };
   },
   methods: {
@@ -122,6 +123,14 @@ export default {
           this.scrollTopId = "wine";
       }
     },
+    // + 图片点击追加
+    foodAdd(event) {
+        console.log(event.currentTarget.dataset.info)
+        let item_name, item_id, item_price
+        [item_name, item_id, item_price] = event.currentTarget.dataset.info
+        console.log(item_id)
+    },
+
     // resetCurrentIndex(){
     //   this.currentIndex = null
     // },
@@ -336,6 +345,7 @@ export default {
 		position: relative;
 	}
   .item-cart-add-icon {
+    display: inline-block;
 		width: 40rpx;
 		height: 40rpx;
 		position: absolute;
