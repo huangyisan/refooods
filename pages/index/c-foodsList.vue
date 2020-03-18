@@ -145,18 +145,20 @@ export default {
     // },
 
     getToprpx(selector) {
-      // const view = this.createSelectorQuery().select(selector)
-      // console.log(view)
-    	// view.boundingClientRect(data => {
-      //   console.log(data)
-    	// 	// this.toprpx.push(data.top)
-      // }).exec();
+      if (this.toprpx.length === 0){
+      const titleTopArray = []
       const query = uni.createSelectorQuery().in(this);
       query.selectAll(selector).boundingClientRect(data => {
-        // console.log("得到布局位置信息" + JSON.stringify(data));
-        // console.log("节点离页面顶部的距离为" + data.top);
+        for(let i = 0; i<data.length; i++){
+          const top = data[i].top
+          if (top > 0) {
+            titleTopArray.push(top)
+          }
+        }
       }).exec();
-
+      this.toprpx = titleTopArray
+      console.log(this.toprpx)
+      }
     },
 
     // 监听滚动
