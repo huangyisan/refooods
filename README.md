@@ -14,6 +14,8 @@ http://mock.myzone.com/mock/foodsinfo.json
 1. animation的实现
 2. 定位
 3. 防抖动
+4. wxs中传入js的内容
+
 
 ## Todo
 1. + 点击追加食物. watch list

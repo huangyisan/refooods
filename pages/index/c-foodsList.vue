@@ -28,8 +28,9 @@
       class="side-right-wrapper"
       :scroll-into-view="scrollTopId"
       :scroll-top="scrollTop"
+      :data-toprpx="toprpx"
       scroll-with-animation="true"
-      @scroll="scrollInfo"
+      @scroll="leftItem.scrollInfo"
     >
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
@@ -70,9 +71,23 @@
     var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
     instance.addClass('active')
   }
-  module.exports = {
-    btnClick: btnClick
+
+
+
+  function scrollInfo(event,ins) {
+    // toprpx = ins.callMethod("reToprpx")
+    console.log(JSON.stringify(event))
+    // console.log(toprpx[0])
+    var dataset = event.instance.getDataset();
+    console.log(JSON.stringify(dataset))
+
   }
+  module.exports = {
+    btnClick: btnClick,
+    scrollInfo: scrollInfo
+  }
+
+
 
 </script>
 
@@ -159,6 +174,10 @@ export default {
       this.toprpx = titleTopArray
       console.log(this.toprpx)
       }
+    },
+
+    reToprpx(){
+      return this.toprpx
     },
 
     // 监听滚动
