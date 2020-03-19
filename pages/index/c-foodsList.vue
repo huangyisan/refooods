@@ -7,6 +7,7 @@
           <view v-if="index === 0"
             :class='["side-left-item", "active", "inner_" + index]'
             :data-index="index"
+			:data-toprpx="toprpx"
             @click="leftItem.btnClick"
           >
             <text>{{title.trim()}}</text>
@@ -15,6 +16,7 @@
           <view v-else
             :class='["side-left-item", "inner_" + index]'
             :data-index="index"
+			:data-toprpx="toprpx"
             @click="leftItem.btnClick"
           >
             <text>{{title.trim()}}</text>
@@ -34,7 +36,7 @@
     >
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
-          <view class="item-title" id="title">
+          <view class="item-title" :id='"item_" + index'>
 						<text class="title-content">{{title + ' '}}</text>
 						<text class="title-des">{{des}}</text>
 					</view>
@@ -70,6 +72,28 @@
     }
     var instance = ins.selectComponent('.inner_' + event.currentTarget.dataset.index)
     instance.addClass('active')
+	
+	// 计算之后的高度用来对比
+	var dataset = event.instance.getDataset();
+	var wxsToprpx = dataset.toprpx
+	var index = dataset.index
+	if(index === 0){
+		ins.callMethod("setScrollTopId", "item_0")
+	}else if(index === 1){
+		ins.callMethod("setScrollTopId", "item_1")
+	}else if (index === 2){
+		ins.callMethod("setScrollTopId", "item_2")
+	}
+	var newWxsToprpx = []
+	var firstToprpx = wxsToprpx[0]
+	for(var i=0; i<wxsToprpx.length; i++){
+		newWxsToprpx.push(wxsToprpx[i] - firstToprpx)
+	}
+	
+	var n1 = newWxsToprpx[0]
+	var n2 = newWxsToprpx[1]
+	var n3 = newWxsToprpx[2]
+	
   }
 
 
@@ -84,27 +108,26 @@
 	// 计算之后的高度用来对比
 	var newWxsToprpx = []
 	for(var i=0; i<wxsToprpx.length; i++){
-		newWxsToprpx.push(wxsToprpx[i] - firstToprpx)
+		newWxsToprpx.push(wxsToprpx[i] - firstToprpx - 1)
 	}
-	
 	var n1 = newWxsToprpx[0]
 	var n2 = newWxsToprpx[1]
-  var n3 = newWxsToprpx[2]
+    var n3 = newWxsToprpx[2]
   
   var youhui = ins.selectComponent('.inner_0')
   var renqi = ins.selectComponent('.inner_1')
   var rexiao = ins.selectComponent('.inner_2')
 	
-	if (wxsScrollTop > 0 && wxsScrollTop < n2){
+	if (wxsScrollTop >= 0 && wxsScrollTop < n2){
     var youhui = ins.selectComponent('.inner_0')
     youhui.addClass('active')
     renqi.removeClass('active')
     rexiao.removeClass('active')
-	}else if(wxsScrollTop > n2 && wxsScrollTop < n3){
+	}else if(wxsScrollTop >= n2 && wxsScrollTop < n3){
     youhui.removeClass('active')
     renqi.addClass('active')
     rexiao.removeClass('active')
-  }else if(wxsScrollTop > n3){
+  }else if(wxsScrollTop >= n3){
     youhui.removeClass('active')
     renqi.removeClass('active')
     rexiao.addClass('active')
@@ -145,7 +168,7 @@ export default {
       scrollTop: 0,
       // 存放组件自身高度
       toprpx: [],
-      scrollTopId: "vegetable",
+      scrollTopId: "item_0",
       cartList: {},
     };
   },
@@ -204,6 +227,10 @@ export default {
       // console.log(this.toprpx)
       }
     },
+	
+	setScrollTopId(id) {
+		this.scrollTopId = id
+	},
 
     reToprpx(){
       return this.toprpx
@@ -230,7 +257,7 @@ export default {
     },
 
     ifLoad(){
-      this.getToprpx("#title");
+      this.getToprpx(".item-title");
     }
   },
 
