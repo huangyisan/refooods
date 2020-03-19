@@ -76,11 +76,39 @@
 
   function scrollInfo(event,ins) {
     // toprpx = ins.callMethod("reToprpx")
-    console.log(JSON.stringify(event))
-    // console.log(toprpx[0])
-    var dataset = event.instance.getDataset();
-    console.log(JSON.stringify(dataset))
-
+	var dataset = event.instance.getDataset();
+	// 当前滚动距离
+	var wxsScrollTop = event.detail.scrollTop
+	var wxsToprpx = dataset.toprpx
+	var firstToprpx = wxsToprpx[0]
+	// 计算之后的高度用来对比
+	var newWxsToprpx = []
+	for(var i=0; i<wxsToprpx.length; i++){
+		newWxsToprpx.push(wxsToprpx[i] - firstToprpx)
+	}
+	
+	var n1 = newWxsToprpx[0]
+	var n2 = newWxsToprpx[1]
+  var n3 = newWxsToprpx[2]
+  
+  var youhui = ins.selectComponent('.inner_0')
+  var renqi = ins.selectComponent('.inner_1')
+  var rexiao = ins.selectComponent('.inner_2')
+	
+	if (wxsScrollTop > 0 && wxsScrollTop < n2){
+    var youhui = ins.selectComponent('.inner_0')
+    youhui.addClass('active')
+    renqi.removeClass('active')
+    rexiao.removeClass('active')
+	}else if(wxsScrollTop > n2 && wxsScrollTop < n3){
+    youhui.removeClass('active')
+    renqi.addClass('active')
+    rexiao.removeClass('active')
+  }else if(wxsScrollTop > n3){
+    youhui.removeClass('active')
+    renqi.removeClass('active')
+    rexiao.addClass('active')
+  }
   }
   module.exports = {
     btnClick: btnClick,
@@ -171,8 +199,9 @@ export default {
           }
         }
       }).exec();
+	  // titleTopArray = titleTopArray.map(x => x-firstTitleTopArray)
       this.toprpx = titleTopArray
-      console.log(this.toprpx)
+      // console.log(this.toprpx)
       }
     },
 
