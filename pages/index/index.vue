@@ -8,10 +8,11 @@
 </template>
 
 <script>
-	import cSwiper from './c-swiper.vue'
-	import cSearch from './c-search.vue'
-	import cFoodsList from './c-foodsList.vue'
-	import cBottomBar from './c-bottomBar.vue'
+	// import cSwiper from './c-swiper.vue'
+	import cSwiper from '@/components/index/c-swiper.vue'
+	import cSearch from '@/components/index/c-search.vue'
+	import cFoodsList from '@/components/index/c-foodsList.vue'
+	import cBottomBar from '@/components/index/c-bottomBar.vue'
 
 	// network request
 	import {getFoodsInfo, Foods} from '../../utils/network/foods'
