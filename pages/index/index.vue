@@ -26,13 +26,13 @@
 		data() {
 			return {
 				imgList: [{
-						'imgUrl': "../../static/img/swiper/swiper-01.jpg"
+						'imgUrl': "/static/img/swiper/swiper-01.jpg"
 					},
 					{
-						'imgUrl': "../../static/img/swiper/swiper-02.jpg"
+						'imgUrl': "/static/img/swiper/swiper-02.jpg"
 					},
 					{
-						'imgUrl': "../../static/img/swiper/swiper-03.jpg"
+						'imgUrl': "/static/img/swiper/swiper-03.jpg"
 					}
 				],
 				// 存放食物类型,左边栏
