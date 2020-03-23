@@ -7,7 +7,7 @@
 		:duration="1000"
 		:circular="true"
 		>
-			<swiper-item v-for='item in imgList' :key='item.imgUrl'>
+			<swiper-item v-for='item in imgList' :key='item.imgUrl' class="text-center">
 				<!-- <view class="swiper-item"> -->
 					<image :src='item.imgUrl' alt="" class='swiper-img' style="height: 100%;" lazy-load>
 				<!-- </view> -->
@@ -36,25 +36,5 @@
 </script>
 
 <style scoped>
-	
-	.swiper-wrapper {
-		/* position: relative; */
-		/* top: 0; */
-		/* swiper 存在默认高度为150px */
-		/* height: 300rpx; */
-	}
 
-	swiper-item {
-		text-align: center;
-		/* background-color: #007AFF; */
-		/* height: 150rpx; */
-		/* width: 100%; */
-		/* height: 300rpx; */
-	}
-	
-	.swiper-img {
-		/* width:100%; */
-		/* height: 300rpx */
-		/* height: 100%; */
-	}
 </style>
