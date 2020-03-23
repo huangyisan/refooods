@@ -16,4 +16,6 @@
 	/*每个页面公共css */
 @import './utils/css/base.css';
 @import './utils/css/animate.css';
+@import './utils/css/uni.css';
+@import './utils/css/zcm-main.css';
 </style>
