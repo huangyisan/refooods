@@ -9,7 +9,7 @@
 		>
 			<swiper-item v-for='item in imgList' :key='item.imgUrl' class="text-center">
 				<!-- <view class="swiper-item"> -->
-					<image :src='item.imgUrl' alt="" class='swiper-img'>
+					<image :src='item.imgUrl' alt="" class='swiper-img' style="height: 100%;" lazy-load>
 				<!-- </view> -->
 			</swiper-item>
 		</swiper>
@@ -36,17 +36,5 @@
 </script>
 
 <style scoped>
-	swiper-item {
-		/* text-align: center; */
-		/* background-color: #007AFF; */
-		/* height: 150rpx; */
-		/* width: 100%; */
-		height: 300rpx;
-	}
-	
-	.swiper-img {
-		/* width:100%; */
-		/* height: 300rpx */
-		/* height: 100%; */
-	}
+
 </style>
