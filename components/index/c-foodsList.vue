@@ -46,6 +46,7 @@
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
           <view class="item-title" :id='"item_" + index'>
+			  <item-title :title=title :des=des></item-title>
 						<text class="title-content">{{title + ' '}}</text>
 						<text class="title-des">{{des}}</text>
 					</view>
@@ -152,9 +153,12 @@
 </script>
 
 <script>
+	
+import itemTitle from './c-itemTitle.vue'
 
 export default {
   components: {
+	  itemTitle,
   },
   props: {
     foodsCategory: {
