@@ -1,25 +1,34 @@
 <template>
-  <view class="foods-wrapper" id="ccc">
-    <scroll-view scroll-y="true" class="side-left-wrapper">
+  <view class="d-flex" style="height: 766rpx;">
+    <scroll-view scroll-y="true" class="flex-1">
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
           <!-- 第一个元素展现样式 -->
           <view v-if="index === 0"
-            :class='["side-left-item", "active", "inner_" + index]'
+            :class='[
+				"side-left-item", 
+				"active", 
+				"inner_" + index,
+				"d-flex", "flex-column", "j-center", "h-60", "py-2", "word-action-1", "font-sm","bg-muted","text-light-muted"
+				]'
             :data-index="index"
 			:data-toprpx="toprpx"
             @click="leftItem.btnClick"
           >
-            <text>{{title.trim()}}</text>
+            <text class="p-2">{{title.trim()}}</text>
           </view>
 
           <view v-else
-            :class='["side-left-item", "inner_" + index]'
+            :class='[
+				"side-left-item", 
+				"inner_" + index,
+				"d-flex", "flex-column", "j-center", "h-60", "py-2", "word-action-1", "font-sm","bg-muted","text-light-muted"
+			]'
             :data-index="index"
 			:data-toprpx="toprpx"
             @click="leftItem.btnClick"
           >
-            <text>{{title.trim()}}</text>
+            <text class="p-2">{{title.trim()}}</text>
           </view>
         </block>
       </block>
@@ -27,7 +36,7 @@
 
     <scroll-view
       scroll-y="true"
-      class="side-right-wrapper"
+      class="side-right-wrapper flex-4"
       :scroll-into-view="scrollTopId"
       :scroll-top="scrollTop"
       :data-toprpx="toprpx"
@@ -283,62 +292,6 @@ export default {
 
 <style scoped>
 
-
-.foods-wrapper {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  /* background-color: #C03189; */
-  width: 100%;
-  top: 350rpx;
-  bottom: 88rpx;
-}
-
-.side-left-wrapper {
-
-  /* background-color: #F0AD4E; */
-  flex: 1;
-}
-
-.side-right-wrapper {
-  /* background-color: #829fff; */
-  flex: 4;
-  box-shadow: 0 1px 1px rgba(100,100,100,.1);
-}
-
-.side-left-item {
-/* 用flex让text文字居中 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  background: #f8f8f8;
-  height: 60rpx;
-  padding: 20rpx 0;
-  font-size: 22rpx;
-  color: #999;
-  /* 换行 */
-  word-break: break-all;
-  white-space: normal;
-  text-overflow: ellipsis;
-}
-
-.side-left-item text{
-  position: absolute;
-  left:10rpx;
-  right:10rpx;
-
-}
-
-.active {
-  color: #333;
-  background-color: #ffffff;
-}
-
-.mytext {
-  display: inline-block;
-  background-color: #007aff;
-}
 
 /* 右侧栏标题 */
 .item-title {
