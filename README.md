@@ -1,5 +1,12 @@
 http://mock.myzone.com/mock/foodsinfo.json
 
+## 高度 667px -> 1334rpx
+1. swiper 150px -> 300rpx
+2. search 25px -> 25rpx
+3. line 2px -> 4rpx
+4. list 385px -> 770rpx
+5. buttom 45px -> 90rpx 
+
 
 ## 当前存在问题
 1. ~~真机测试promise报错~~

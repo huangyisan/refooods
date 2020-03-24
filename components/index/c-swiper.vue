@@ -1,5 +1,5 @@
 <template>
-	<view class='swiper-wrapper'>
+	<view style="height: 300rpx;">
 		<swiper 
 		:indicator-dots="true" 
 		:autoplay="true" 
@@ -9,7 +9,7 @@
 		>
 			<swiper-item v-for='item in imgList' :key='item.imgUrl' class="text-center">
 				<!-- <view class="swiper-item"> -->
-					<image :src='item.imgUrl' alt="" style="height: 100%;" lazy-load>
+					<image :src='item.imgUrl' style="height: 100%;" lazy-load>
 				<!-- </view> -->
 			</swiper-item>
 		</swiper>
