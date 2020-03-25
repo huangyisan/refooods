@@ -2,7 +2,7 @@
 	<view class="py-2 pl-2 d-flex">
 		<image class="mr-2 rounded flex-1" style="height: 140rpx;" :src="iten.img" lazy-load=true @load="ifLoad">
 		<view class="d-flex flex-3 flex-column">
-		  <text class="item-name">{{iten.name}}</text>
+		  <text class="item-name font-weight of-h word-action-2 font">{{iten.name}}</text>
 		  <text class="item-des">{{iten.description.trim()}}</text>
 		  <text class="item-rate">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
 			<view class='price-cart-add'>
@@ -79,14 +79,15 @@
 			flex: 3 */
 		}
 	
-		.item-name {
+		/* .item-name {
 			font-weight: 700;
 	    overflow: hidden;
 	    font-size: 24rpx;
-	    white-space: nowrap;
+	    white-space: nowrap; */
 	    /* width: 40vw; */
-	    text-overflow: ellipsis;
-		}
+	    /* text-overflow: ellipsis; */
+		/* } */
+
 		.item-des {
 	
 	    margin: 1.333333vw 0;

@@ -45,7 +45,7 @@ body{
 .h-50{ width: 625rpx; }
 .h-60 { height: 60rpx}
 /* 字体 */
-.font{ font-size: 25rpx; }
+.font{ font-size: 24rpx; }
 .font-sm{ font-size: 22rpx; }
 .font-md{ font-size: 30rpx; }
 .font-lg{ font-size: 40rpx; }
@@ -325,8 +325,12 @@ body{
 .pr-5 { padding-right: 50rpx;}
 
 .word-action-1 {word-break: break-all; white-space: normal; text-overflow: ellipsis;}
+.word-action-2 {white-space: nowrap; text-overflow: ellipsis;}
+
 
 /* 点击文字被激活时候的状态 */
 .active {color: #333!important; background-color: #ffffff!important;}
 
 .va-m {vertical-align: middle;}
+
+.of-h {overflow: hidden;}
