@@ -8,7 +8,7 @@
 			<view class='d-flex py-1 j-sb' style="max-width: 350rpx;">
 		      <text class="font-price text-price">{{'￥' + iten.lowest_price}}</text>
 		<!-- 点击后追加购物车 -->
-			   <image class="add-icon-size" src="../../static/img/icon/cart_add.svg" alt="" :data-info='[iten.name, iten.item_id, iten.lowest_price]' @click="foodAdd">		
+			   <image class="add-icon-size" src="/static/img/icon/cart_add.svg" alt="" :data-info='[iten.name, iten.item_id, iten.lowest_price]' @click="foodAdd">		
 			</view>
 		</view>
 	</view>
