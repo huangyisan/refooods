@@ -17,6 +17,7 @@ body{
 	--white: #fff;
 	--borderColor:#dee2e6;
 	--lightmuted:#999;
+	--price: #ff5339;
 }
 
 /* 阴影 */
@@ -47,6 +48,7 @@ body{
 /* 字体 */
 .font{ font-size: 24rpx; }
 .font-sm{ font-size: 22rpx; }
+.font-price{ font-size: 26rpx; }
 .font-md{ font-size: 30rpx; }
 .font-lg{ font-size: 40rpx; }
 .font-big{ font-size: 60rpx; }
@@ -179,6 +181,7 @@ body{
 .border-white{ border-color: var(--white)!important }
 .border-light-secondary{border-color: #F1F1F1!important;}
 
+
 .rounded{ border-radius: 6rpx; }
 .rounded-circle{ border-radius:100%; }
 .rounded-0{ border-radius:0; }
@@ -195,6 +198,7 @@ body{
 .text-muted{ color: var(--muted)!important; }
 .text-light-muted{ color: var(--lightmuted)!important; }
 .text-white{ color: var(--white)!important; }
+.text-price{ color: var(--price)!important; }
 
 .bg-primary{ background-color:var(--primary)!important; }
 .bg-secondary{ background-color:var(--secondary)!important; }
@@ -334,3 +338,6 @@ body{
 .va-m {vertical-align: middle;}
 
 .of-h {overflow: hidden;}
+
+/* 添加按钮大小 */
+.add-icon-size {width: 40rpx; height: 40rpx;}
