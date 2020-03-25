@@ -43,12 +43,14 @@
       scroll-with-animation="true"
       @scroll="leftItem.scrollInfo"
     >
+	
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
           <view class="item-title" :id='"item_" + index'>
 			  <item-title :title=title :des=des></item-title>
 		  </view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
+<<<<<<< HEAD
 			  <item-content :iten=iten></item-content>
 			  <!-- delete -->
 			<view class="food-info-wrapper" >
@@ -66,6 +68,12 @@
 				    </view>
 				</view>
 			</view>
+=======
+			  <item-content :iten=iten @picLoad="getToprpx"></item-content>
+			  <!-- <item-content :iten=iten @picLoad="print"></item-content> -->
+			  <!-- delete -->
+			
+>>>>>>> right-item
 			<!-- delete -->
           </block>
         </block>
@@ -112,6 +120,7 @@
   function scrollInfo(event,ins) {
     // toprpx = ins.callMethod("reToprpx")
 	var dataset = event.instance.getDataset();
+	// console.log(JSON.stringify(dataset))
 	// 当前滚动距离
 	var wxsScrollTop = event.detail.scrollTop
 	var wxsToprpx = dataset.toprpx
@@ -180,10 +189,10 @@ export default {
   },
   data() {
     return {
+	  toprpx: [],
       currentIndex: 0,
       scrollTop: 0,
       // 存放组件自身高度
-      toprpx: [],
       scrollTopId: "item_0",
       cartList: {},
     };
@@ -205,6 +214,12 @@ export default {
           this.scrollTopId = "wine";
       }
     },
+	
+	print(e) {
+		console.log(e)
+		console.log(11111111111)
+	},
+	
     // + 图片点击追加
     foodAdd(event) {
         // let num = 0
@@ -240,8 +255,8 @@ export default {
       }).exec();
 	  // titleTopArray = titleTopArray.map(x => x-firstTitleTopArray)
       this.toprpx = titleTopArray
-      // console.log(this.toprpx)
-      }
+      console.log(this.toprpx)
+      }	
     },
 	
 	setScrollTopId(id) {

@@ -19,7 +19,58 @@
 <script>
 	export default {
 		props:{
+<<<<<<< HEAD
 			iten:Object
+=======
+			iten:Object,
+			
+		},
+		data() {
+			return {
+				cartList: {},
+			}
+		},
+		methods:{
+			ifLoad(){
+				this.$emit("picLoad",".item-title")
+			  // this.getToprpx(".item-title");
+			},
+			
+			foodAdd(event) {
+			    // let num = 0
+			    let itemName, itemId, itemPrice, itemNum, isFood
+			    [itemName, itemId, itemPrice, itemNum] = event.currentTarget.dataset.info
+			    isFood = this.cartList[itemId]
+			    console.log(this.cartList[itemId])
+			    if (isFood){
+			      itemNum = isFood.item_num
+			      itemNum += 1
+			    }else{
+			      itemNum = 1
+			    }
+			    this.cartList[itemId] = {item_name: itemName, item_price: itemPrice, item_num:itemNum, item_id: itemId}
+			    console.log(this.cartList)
+			},
+			
+			// scrollInfo(position) {
+			//   // console.log(this.toprpx);
+			//   let gapOne = this.toprpx[1] - this.toprpx[0];
+			//   let gapTow = this.toprpx[2] - this.toprpx[0];
+			//   if (position.target.scrollTop < gapOne) {
+			//     this.currentIndex = 0;
+			//     this.scrollTopId = "default";
+			//   } else if (
+			//     position.target.scrollTop > gapOne &&
+			//     position.target.scrollTop < gapTow
+			//   ) {
+			//     this.currentIndex = 1;
+			//     this.scrollTopId = "default";
+			//   } else if (position.target.scrollTop > gapTow) {
+			//     this.currentIndex = 2;
+			//     this.scrollTopId = "default";
+			//   }
+			// },
+>>>>>>> right-item
 		}
 	}
 </script>
