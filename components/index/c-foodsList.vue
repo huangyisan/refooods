@@ -50,30 +50,10 @@
 			  <item-title :title=title :des=des></item-title>
 		  </view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
-<<<<<<< HEAD
-			  <item-content :iten=iten></item-content>
-			  <!-- delete -->
-			<view class="food-info-wrapper" >
-				<image class="item-pic" :src="iten.img" alt="" lazy-load=true @load="ifLoad">
-					<view class="food-info">
-            <text class="item-name">{{iten.name}}</text>
-            <text class="item-des">{{iten.description.trim()}}</text>
-            <text class="item-rate">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
-            <!-- <text class="item-materials">{{iten.materials}}</text> -->
-            <!-- <text class="item-satisfy-rate">{{iten.satisfy_rate}}</text> -->
-						<view class='price-cart-add'>
-            <text class="item-lowest-price">{{'￥' + iten.lowest_price}}</text>
-            <!-- 点击后追加购物车 -->
-						<image class="item-cart-add-icon" src="../../static/img/icon/cart_add.svg" alt="" :data-info='[iten.name, iten.item_id, iten.lowest_price]' @click="foodAdd">		
-				    </view>
-				</view>
-			</view>
-=======
 			  <item-content :iten=iten @picLoad="getToprpx"></item-content>
 			  <!-- <item-content :iten=iten @picLoad="print"></item-content> -->
 			  <!-- delete -->
 			
->>>>>>> right-item
 			<!-- delete -->
           </block>
         </block>

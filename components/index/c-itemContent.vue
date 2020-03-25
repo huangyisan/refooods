@@ -19,9 +19,6 @@
 <script>
 	export default {
 		props:{
-<<<<<<< HEAD
-			iten:Object
-=======
 			iten:Object,
 			
 		},
@@ -70,7 +67,6 @@
 			//     this.scrollTopId = "default";
 			//   }
 			// },
->>>>>>> right-item
 		}
 	}
 </script>
