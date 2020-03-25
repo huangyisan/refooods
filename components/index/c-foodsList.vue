@@ -51,10 +51,7 @@
 		  </view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
 			  <item-content :iten=iten @picLoad="getToprpx"></item-content>
-			  <!-- <item-content :iten=iten @picLoad="print"></item-content> -->
-			  <!-- delete -->
-			
-			<!-- delete -->
+
           </block>
         </block>
       </block>

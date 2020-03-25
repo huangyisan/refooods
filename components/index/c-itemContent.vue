@@ -5,8 +5,6 @@
 		  <text class="item-name">{{iten.name}}</text>
 		  <text class="item-des">{{iten.description.trim()}}</text>
 		  <text class="item-rate">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
-		<!-- <text class="item-materials">{{iten.materials}}</text> -->
-		<!-- <text class="item-satisfy-rate">{{iten.satisfy_rate}}</text> -->
 			<view class='price-cart-add'>
 		      <text class="item-lowest-price">{{'￥' + iten.lowest_price}}</text>
 		<!-- 点击后追加购物车 -->
@@ -49,25 +47,6 @@
 			    this.cartList[itemId] = {item_name: itemName, item_price: itemPrice, item_num:itemNum, item_id: itemId}
 			    console.log(this.cartList)
 			},
-			
-			// scrollInfo(position) {
-			//   // console.log(this.toprpx);
-			//   let gapOne = this.toprpx[1] - this.toprpx[0];
-			//   let gapTow = this.toprpx[2] - this.toprpx[0];
-			//   if (position.target.scrollTop < gapOne) {
-			//     this.currentIndex = 0;
-			//     this.scrollTopId = "default";
-			//   } else if (
-			//     position.target.scrollTop > gapOne &&
-			//     position.target.scrollTop < gapTow
-			//   ) {
-			//     this.currentIndex = 1;
-			//     this.scrollTopId = "default";
-			//   } else if (position.target.scrollTop > gapTow) {
-			//     this.currentIndex = 2;
-			//     this.scrollTopId = "default";
-			//   }
-			// },
 		}
 	}
 </script>
