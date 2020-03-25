@@ -46,7 +46,7 @@
 	
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
-          <view class="ml-2 py-2" :id='"item_" + index'>
+          <view class="item-title ml-2 py-2" :id='"item_" + index'>
 			  <item-title :title=title :des=des></item-title>
 		  </view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
@@ -293,11 +293,6 @@ export default {
 
 
 /* 右侧栏标题 */
-.item-title {
-	/* padding: 2vw 8vw 2vw 0; */
-	/* margin-left: 2.666667vw; */
-}
-
 .title-content {
   color: #666;
 	font-weight: 700;
