@@ -2,9 +2,9 @@
 	<view class="py-2 pl-2 d-flex">
 		<image class="mr-2 rounded flex-1" style="height: 140rpx;" :src="iten.img" lazy-load=true @load="ifLoad">
 		<view class="d-flex flex-3 flex-column">
-		  <text class="item-name font-weight of-h word-action-2 font">{{iten.name}}</text>
-		  <text class="item-des">{{iten.description.trim()}}</text>
-		  <text class="item-rate">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
+		  <text class="font-weight of-h word-action-2 font">{{iten.name}}</text>
+		  <text class="my font-sm of-h word-action-2 text-light-muted" style="max-width: 350rpx;">{{iten.description.trim()}}</text>
+		  <text class="item-rate my font-sm of-h word-action-2 text-light-muted" style="max-width: 350rpx;">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
 			<view class='price-cart-add'>
 		      <text class="item-lowest-price">{{'￥' + iten.lowest_price}}</text>
 		<!-- 点击后追加购物车 -->
@@ -90,17 +90,19 @@
 
 		.item-des {
 	
-	    margin: 1.333333vw 0;
-	    font-size: 22rpx;
-	    color: #999;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    white-space: nowrap;
+	    /* margin: 1.333333vw 0; */
+	    /* font-size: 22rpx; */
+	    /* color: #999; */
+	    /* overflow: hidden; */
+	    /* text-overflow: ellipsis; */
+	    /* white-space: nowrap; */
 	
-	    width: 42.666667vw;
+			/* width: 42.666667vw; */
+			/* width: 300rpx; */
+			
 		}
 	
-		.item-rate {
+		/* .item-rate {
 			margin: 1.333333vw 0;
 	    font-size: 22rpx;
 	    color: #999;
@@ -109,7 +111,7 @@
 	    white-space: nowrap;
 	
 	    width: 42.666667vw;
-		}
+		} */
 	
 		.item-lowest-price {
 			color: #ff5339;
