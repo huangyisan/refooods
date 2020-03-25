@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<text class="title-content">{{title + ' '}}</text>
-		<text class="title-des">{{des}}</text>
+		<text class="text-light-muted font">{{title + ' '}}</text>
+		<text class="text-light-muted font-sm">{{des}}</text>
 	</view>
 </template>
 
