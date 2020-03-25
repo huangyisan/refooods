@@ -135,6 +135,7 @@ body{
 .d-inline-block{ display: inline-block; }
 
 .flex-1{ flex: 1; }
+.flex-3{ flex: 3; }
 .flex-4{ flex: 4; }
 .flex-column{ flex-direction: column; }
 .flex-row{ flex-direction: row; }
@@ -327,3 +328,5 @@ body{
 
 /* 点击文字被激活时候的状态 */
 .active {color: #333!important; background-color: #ffffff!important;}
+
+.va-m {vertical-align: middle;}

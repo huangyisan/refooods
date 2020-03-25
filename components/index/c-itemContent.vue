@@ -1,7 +1,7 @@
 <template>
 	<view class="py-2 pl-2 d-flex">
 		<image class="mr-2 rounded flex-1" style="height: 140rpx;" :src="iten.img" lazy-load=true @load="ifLoad">
-		<view class="food-info">
+		<view class="d-flex flex-3 flex-column">
 		  <text class="item-name">{{iten.name}}</text>
 		  <text class="item-des">{{iten.description.trim()}}</text>
 		  <text class="item-rate">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
@@ -74,9 +74,9 @@
 		}
 	
 		.food-info {
-			display: flex;
+			/* display: flex;
 			flex-direction: column;
-			flex: 3
+			flex: 3 */
 		}
 	
 		.item-name {
