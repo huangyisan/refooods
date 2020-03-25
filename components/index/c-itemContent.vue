@@ -1,6 +1,6 @@
 <template>
-	<view class="food-info-wrapper py-2 pl-2">
-		<image class="item-pic" :src="iten.img" lazy-load=true @load="ifLoad">
+	<view class="py-2 pl-2 d-flex">
+		<image class="mr-2 rounded flex-1" style="height: 140rpx;" :src="iten.img" lazy-load=true @load="ifLoad">
 		<view class="food-info">
 		  <text class="item-name">{{iten.name}}</text>
 		  <text class="item-des">{{iten.description.trim()}}</text>
@@ -59,18 +59,18 @@
 	
 	    /* margin-bottom: 4rpx; */
 	
-	    display: flex;
+
 	
-	    min-height: 27.466667vw;
-	    position: relative;
+	    /* min-height: 27.466667vw; */
+	    /* position: relative; */
 	  }
 		.item-pic {
-			width: 140rpx;
-			height: 140rpx;
-			margin-right: 20rpx;
-			vertical-align: middle;
-			border-radius: .533333vw;
-			flex: 1
+			/* width: 140rpx; */
+			/* height: 140rpx; */
+			/* margin-right: 20rpx; */
+			/* vertical-align: middle; */
+			/* border-radius: .533333vw; */
+			/* flex: 1 */
 		}
 	
 		.food-info {

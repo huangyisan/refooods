@@ -178,7 +178,7 @@ body{
 .border-white{ border-color: var(--white)!important }
 .border-light-secondary{border-color: #F1F1F1!important;}
 
-.rounded{ border-radius: 5rpx; }
+.rounded{ border-radius: 6rpx; }
 .rounded-circle{ border-radius:100%; }
 .rounded-0{ border-radius:0; }
 
