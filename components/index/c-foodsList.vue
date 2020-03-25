@@ -43,27 +43,18 @@
       scroll-with-animation="true"
       @scroll="leftItem.scrollInfo"
     >
+	
       <block v-for="(item,index) in foodsCategory" :key="index">
         <block v-for="(des,title) in item" :key="title">
           <view class="item-title" :id='"item_" + index'>
 			  <item-title :title=title :des=des></item-title>
 		  </view>
           <block v-for="(iten, indey) in foods[title]" :key="indey">
-						<view class="food-info-wrapper">
-						<image class="item-pic" :src="iten.img" alt="" lazy-load=true @load="ifLoad">
-						<view class="food-info">
-            <text class="item-name">{{iten.name}}</text>
-            <text class="item-des">{{iten.description.trim()}}</text>
-            <text class="item-rate">月售{{iten.month_sales + '份' + ' ' + '好评率' + iten.satisfy_rate + '%'}}</text>
-            <!-- <text class="item-materials">{{iten.materials}}</text> -->
-            <!-- <text class="item-satisfy-rate">{{iten.satisfy_rate}}</text> -->
-						<view class='price-cart-add'>
-            <text class="item-lowest-price">{{'￥' + iten.lowest_price}}</text>
-            <!-- 点击后追加购物车 -->
-						<image class="item-cart-add-icon" src="../../static/img/icon/cart_add.svg" alt="" :data-info='[iten.name, iten.item_id, iten.lowest_price]' @click="foodAdd">		
-						</view>
-						</view>
-						</view>
+			  <item-content :iten=iten @picLoad="getToprpx"></item-content>
+			  <!-- <item-content :iten=iten @picLoad="print"></item-content> -->
+			  <!-- delete -->
+			
+			<!-- delete -->
           </block>
         </block>
       </block>
@@ -109,6 +100,7 @@
   function scrollInfo(event,ins) {
     // toprpx = ins.callMethod("reToprpx")
 	var dataset = event.instance.getDataset();
+	// console.log(JSON.stringify(dataset))
 	// 当前滚动距离
 	var wxsScrollTop = event.detail.scrollTop
 	var wxsToprpx = dataset.toprpx
@@ -153,10 +145,12 @@
 <script>
 	
 import itemTitle from './c-itemTitle.vue'
+import itemContent from './c-itemContent.vue'
 
 export default {
   components: {
 	  itemTitle,
+	  itemContent,
   },
   props: {
     foodsCategory: {
@@ -175,10 +169,10 @@ export default {
   },
   data() {
     return {
+	  toprpx: [],
       currentIndex: 0,
       scrollTop: 0,
       // 存放组件自身高度
-      toprpx: [],
       scrollTopId: "item_0",
       cartList: {},
     };
@@ -200,6 +194,12 @@ export default {
           this.scrollTopId = "wine";
       }
     },
+	
+	print(e) {
+		console.log(e)
+		console.log(11111111111)
+	},
+	
     // + 图片点击追加
     foodAdd(event) {
         // let num = 0
@@ -235,8 +235,8 @@ export default {
       }).exec();
 	  // titleTopArray = titleTopArray.map(x => x-firstTitleTopArray)
       this.toprpx = titleTopArray
-      // console.log(this.toprpx)
-      }
+      console.log(this.toprpx)
+      }	
     },
 	
 	setScrollTopId(id) {
