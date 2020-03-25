@@ -33,6 +33,7 @@
 			  // this.getToprpx(".item-title");
 			},
 			
+			
 			foodAdd(event) {
 			    // let num = 0
 			    let itemName, itemId, itemPrice, itemNum, isFood
