@@ -1,6 +1,6 @@
 <template>
-	<view class="food-info-wrapper">
-		<image class="item-pic" :src="iten.img" alt="" lazy-load=true @load="ifLoad">
+	<view class="food-info-wrapper py-2 pl-2">
+		<image class="item-pic" :src="iten.img" lazy-load=true @load="ifLoad">
 		<view class="food-info">
 		  <text class="item-name">{{iten.name}}</text>
 		  <text class="item-des">{{iten.description.trim()}}</text>
@@ -28,9 +28,7 @@
 		methods:{
 			ifLoad(){
 				this.$emit("picLoad",".item-title")
-			  // this.getToprpx(".item-title");
 			},
-			
 			
 			foodAdd(event) {
 			    // let num = 0
@@ -52,28 +50,14 @@
 </script>
 
 <style>
-	.title-content {
-	  color: #666;
-		font-weight: 700;
-		font-size: 24rpx;
-	}
-	
-	.title-des {
-	    /* flex: 1; */
-	    color: #999;
-	    font-size: 20rpx;
-	    white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	}
-	
 	/* foods style */
 	  .food-info-wrapper {
 			
-	    padding: 2.666667vw 0;
-	    padding-left: 2.666667vw;
+	    /* padding: 20rpx 0; */
+	    /* padding-left: 2.666667vw; */
+			/* padding-left: 20rpx; */
 	
-	    margin-bottom: .133333vw;
+	    /* margin-bottom: 4rpx; */
 	
 	    display: flex;
 	
