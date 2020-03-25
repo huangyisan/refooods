@@ -1,5 +1,5 @@
 <template>
-	<view class="py-2 pl-2 d-flex">
+	<view class="py-2 pl-2 d-flex" style="height: 240rpx">
 		<image class="mr-2 rounded flex-1" style="height: 140rpx;" :src="iten.img" lazy-load=true @load="ifLoad">
 		<view class="d-flex flex-3 flex-column">
 		  <text class="font-weight of-h word-action-2 font">{{iten.name}}</text>
