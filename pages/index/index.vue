@@ -4,7 +4,7 @@
 		<c-search></c-search>
 		<c-line></c-line>
 		<c-foods-list :foodsCategory='foodsCategory' :foods='foods' :testMessage='testMessage'></c-foods-list>
-		<!-- <c-bottom-bar></c-bottom-bar> -->
+		<c-bottom-bar></c-bottom-bar>
 	</view>
 </template>
 

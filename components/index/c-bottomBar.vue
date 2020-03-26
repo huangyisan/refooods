@@ -1,5 +1,5 @@
 <template>
-  <view class="bottom-wrapper">
+  <view class="bottom-wrapper text-center d-flex position-fixed w-100 bb-color-1 position-fixed" style="height:90rpx; line-height: 90rpx;">
     <view class="bottom-item-left" >
 			  <!-- <text v-if="cartStatus" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}"> -->
           <text v-if="cartStatus" class="shop-cart-items">
@@ -124,14 +124,14 @@ export default {
 
 <style>
 .bottom-wrapper {
-  display: flex;
-  height: 88rpx;
-  line-height: 88rpx;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(61, 61, 63, 0.9);
+  /* display: flex; */
+  /* height: 88rpx; */
+  /* line-height: 88rpx; */
+  /* text-align: center; */
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* width: 100%; */
+  /* background-color: #3d3d3f; */
 }
 
 .bottom-item-left {

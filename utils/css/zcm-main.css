@@ -341,3 +341,7 @@ body{
 
 /* 添加按钮大小 */
 .add-icon-size {width: 40rpx; height: 40rpx;}
+
+/* bottom bar color */
+.bb-color-1 {background-color: #3d3d3f;}
+.bb-color-2 {background-color: #38ca73;}
