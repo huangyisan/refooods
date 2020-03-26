@@ -1,6 +1,6 @@
 <template>
-  <view class="bottom-wrapper text-center d-flex position-fixed w-100 bb-color-1 position-fixed" style="height:90rpx; line-height: 90rpx;">
-    <view class="bottom-item-left" >
+  <view class="text-center d-flex position-fixed w-100 bb-color-1 position-fixed" style="height:90rpx; line-height: 90rpx;">
+    <view class="text-center flex-1">
 			  <!-- <text v-if="cartStatus" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}"> -->
           <text v-if="cartStatus" class="shop-cart-items">
           <text class="red-point">{{item_num}}</text>
@@ -135,9 +135,9 @@ export default {
 }
 
 .bottom-item-left {
-  position: relative;
-  flex: 1;
-  text-align: center;
+  /* position: relative; */
+  /* flex: 1; */
+  /* text-align: center; */
 
 }
 
