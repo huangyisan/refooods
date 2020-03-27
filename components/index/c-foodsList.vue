@@ -134,8 +134,6 @@
     scrollInfo: scrollInfo
   }
 
-
-
 </script>
 
 <script>
@@ -174,48 +172,6 @@ export default {
     };
   },
   methods: {
-    // 左侧点击, 改变样式, 并且同步右侧内容
-    itemClick(index) {
-      // console.log(this.currentIndex)
-      this.currentIndex = index;
-      // this.scrollTop = -400
-      switch (index) {
-        case 0:
-          this.scrollTopId = "vegetables";
-          break;
-        case 1:
-          this.scrollTopId = "fruit";
-          break;
-        case 2:
-          this.scrollTopId = "wine";
-      }
-    },
-	
-	print(e) {
-		console.log(e)
-		console.log(11111111111)
-	},
-	
-    // + 图片点击追加
-    foodAdd(event) {
-        // let num = 0
-        let itemName, itemId, itemPrice, itemNum, isFood
-        [itemName, itemId, itemPrice, itemNum] = event.currentTarget.dataset.info
-        isFood = this.cartList[itemId]
-        console.log(this.cartList[itemId])
-        if (isFood){
-          itemNum = isFood.item_num
-          itemNum += 1
-        }else{
-          itemNum = 1
-        }
-        this.cartList[itemId] = {item_name: itemName, item_price: itemPrice, item_num:itemNum, item_id: itemId}
-        console.log(this.cartList)
-    },
-
-    // resetCurrentIndex(){
-    //   this.currentIndex = null
-    // },
 
     getToprpx(selector) {
       if (this.toprpx.length === 0){
@@ -276,14 +232,7 @@ export default {
     // setTimeout(() => {
     //   this.getToprpx("#title");
     // },2000)
-    
-    
-    // this.getToprpx("#人气搭配 誉村套餐");
-    // 
 
-    // console.log(this.foodsCategory);
-    // console.log(this.testMessage);
-    // console.log(this.toprpx);
   },
 };
 </script>
