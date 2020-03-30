@@ -1,7 +1,8 @@
 <template>
 	<view class="content">
 		<c-swiper :imgList='imgList'></c-swiper>
-		<c-search></c-search>
+		<uni-searchBar></uni-searchBar>
+		<!-- <c-search></c-search> -->
 		<c-line></c-line>
 		<c-foods-list :foodsCategory='foodsCategory' :foods='foods' :testMessage='testMessage'></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
@@ -12,6 +13,7 @@
 	// import cSwiper from './c-swiper.vue'
 	import cSwiper from '@/components/index/c-swiper.vue'
 	import cSearch from '@/components/index/c-search.vue'
+	import {uniSearchBar} from '@dcloudio/uni-ui'
 	import cLine  from '@/components/common/c-line.vue'
 	import cFoodsList from '@/components/index/c-foodsList.vue'
 	import cBottomBar from '@/components/index/c-bottomBar.vue'
@@ -53,6 +55,7 @@
 			cLine,
 			cFoodsList,
 			cBottomBar,
+			uniSearchBar,
 		},
 	onShow() {
 		this.selfGetFoodsInfo()
