@@ -30,6 +30,7 @@ http://mock.myzone.com/mock/foodsinfo.json
 3. 域名独立，直接拼接即可。包括image标签
 4. 右边联动, 
 5. 整理css
+6. 改写搜索功能，采用uni的搜索
 
 ## 遇到的几个坑
 1. promise 异常需要catch
