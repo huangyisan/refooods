@@ -12,7 +12,7 @@
 <script>
 	// import cSwiper from './c-swiper.vue'
 	import cSwiper from '@/components/index/c-swiper.vue'
-	import cSearch from '@/components/index/c-search.vue'
+	// import cSearch from '@/components/index/c-search.vue'
 	import {uniSearchBar} from '@dcloudio/uni-ui'
 	import cLine  from '@/components/common/c-line.vue'
 	import cFoodsList from '@/components/index/c-foodsList.vue'
@@ -51,7 +51,7 @@
 	},
 	components: {
 			cSwiper,
-			cSearch,
+			// cSearch,
 			cLine,
 			cFoodsList,
 			cBottomBar,
