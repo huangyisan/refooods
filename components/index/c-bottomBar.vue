@@ -61,9 +61,6 @@
     }
 
     ins.callMethod('setCartStatusTrue')
-
-
-    
     // instance2.removeClass('animated')
     // instance2.removeClass('heartBeat')
     
@@ -81,8 +78,15 @@
 
 import {debounce} from '../../utils/js/debounce'
 
+// Popup components
+import uniPopup from "@/components/uni-popup/uni-popup.vue"
+
 
 export default {
+  components:{
+    // uniPopup
+    uniPopup,
+  },
   data() {
 		return {
       item_num: 0,
