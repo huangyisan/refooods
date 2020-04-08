@@ -1,8 +1,8 @@
 <template>
 	<view class="content">
 		<c-swiper :imgList='imgList'></c-swiper>
-		<uni-searchBar></uni-searchBar>
-		<c-search></c-search>
+		<!-- <c-search></c-search> -->
+    <uni-search-bar @confirm="search" @input="input" ></uni-search-bar>
 		<c-line></c-line>
 		<c-foods-list :foodsCategory='foodsCategory' :foods='foods' :testMessage='testMessage'></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
@@ -16,6 +16,9 @@
 	import cLine  from '@/components/common/c-line.vue'
 	import cFoodsList from '@/components/index/c-foodsList.vue'
 	import cBottomBar from '@/components/index/c-bottomBar.vue'
+  
+  // third component
+  import uniSearchBar from '@/components/uni-search-bar/uni-search-bar.vue'
 
 
 	// network request
@@ -53,10 +56,11 @@
 			cSwiper,
 			cFoodsList,
 			cBottomBar,
-			// uniSearchBar,
-      // Third component
       cSearch,
       cLine,
+      // Third component
+      uniSearchBar,
+
 		},
 	onShow() {
 		this.selfGetFoodsInfo()
