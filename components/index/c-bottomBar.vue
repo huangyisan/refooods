@@ -12,10 +12,13 @@
 
     </view>
     <view class="bottom-item-right flex-4" style="line-height: 90rpx">
+      
       <uni-popup ref="popup" type="bottom">
-        <view class="bg-primary">底部弹出 Popup</view>
-        <view class="bg-primary">底部弹出 Popup</view>
-        <view class="bg-primary">底部弹出 Popup</view>
+        <view  class="position-absolute bottom-90 right-0 left-0">
+          <view class="bg-primary">底部弹出 Popup</view>
+          <view class="bg-primary">底部弹出 Popup</view>
+          <view class="bg-primary">底部弹出 Popup</view>
+        </view>
       </uni-popup>
 			<text v-if="cartStatus" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num"  @click="popUp">你命有了</text>
       <!-- <text v-if="cartStatus" @click="cartAnimation.orderButton" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num"  @click="popUp">你命有了</text> -->
