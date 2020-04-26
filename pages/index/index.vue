@@ -6,6 +6,16 @@
 		<c-line></c-line>
 		<c-foods-list :foodsCategory='foodsCategory' :foods='foods' :testMessage='testMessage'></c-foods-list>
 		<c-bottom-bar></c-bottom-bar>
+    
+    <!-- 底部上拉弹出框 -->
+    <view class="_popup">
+      <view class="_mask">
+        <view class="_body">
+          <text>内容</text>
+        </view>
+      </view>
+    </view>
+    
 	</view>
 </template>
 
@@ -131,5 +141,96 @@
 </script>
 
 <style>
+  
+  ._popup, ._mask {
+    position: fixed;
+    top:0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  ._popup {
+    z-index: 8;
+    
+  }
+  ._mask {
+    z-index: 9;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  ._popup ._body {
+    position: fixed;
+    bottom: 0;
+    /* 左右残留一点内边距 */
+    width: 92%;
+    left:4%;
+    /* padding: 0, 4%; */
+    border-radius: 20rpx 20rpx 0 0;
+    height: 1035rpx;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    
+  }
+  
+  ._popup .show {
+    display: block;
+  }
+  
+  .show ._mask {
+    animation: showPopupMask 0.2s linear both;
+  }
+ 
+  .show ._body {
+    animation: showPopupBody 0.2s linear both;
+    
+  }
+  
+  ._popup .hide {
+    display: block;
+  }
+  
+  .hide ._mask {
+    animation: hidePopupMask 0.2s linear both;
+    
+  }
+  
+  .hide ._body {
+    animation: hidePopupBody 0.2s linear both;
+    
+  }
+  
+  /* 控制mask遮罩动画 */
+  @keyframes showPopupMask{
+    /* 开始透明度为0 */
+    0%{ opacity: 0; }
+    /* 最终透明度为1 */
+    100%{ opacity: 1;}
+  }
+  
+  @keyframes hidePopupMask{
+    /* 开始透明度为1 */
+    0%{ opacity: 1; }
+    /* 最终透明度为0 */
+    100%{ opacity: 0;}
+  }
+  
+  /* 控制body层动画 */
+  @keyframes showPopupBody{
+  /* 上滑呈现效果 */
+    0%{ transform: rotateY(0); }
+    100%{ transform: rotateY(-100%);}
+  }
+  
+  @keyframes hidePopupBody{
+    /* 下滑退出效果 */
+    0%{ transform: rotateY(-100%); }
+    100%{ transform: rotateY(0); }
+  }
+  
+  ._popup .none {
+    display: none;
+  }
 	
 </style>

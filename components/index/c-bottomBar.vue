@@ -12,15 +12,21 @@
 
     </view>
     <view class="bottom-item-right flex-4" style="line-height: 90rpx">
-      
-      <uni-popup ref="popup" type="bottom">
-        <view  class="position-absolute bottom-90 right-0 left-0">
-          <view class="bg-primary">底部弹出 Popup</view>
-          <view class="bg-primary">底部弹出 Popup</view>
-          <view class="bg-primary">底部弹出 Popup</view>
+      <!-- <view  class="position-absolute bottom-90 right-0 left-0"> -->
+<!--      <uni-popup ref="popup" type="bottom">
+        <view  class="position-absolute bottom-90 right-0 left-0 bg-primary">
+          <view>底部弹出 Popup</view>
+          <view>底部弹出 Popup</view>
+          <view>底部弹出 Popup</view>
+          <view>底部弹出 Popup</view>
+          <view>底部弹出 Popup</view>
+          <view>底部弹出 Popup</view>
+          <view>底部弹出 Popup</view>
         </view>
-      </uni-popup>
-			<text v-if="cartStatus" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num"  @click="popUp">你命有了</text>
+        
+      </uni-popup> -->
+      <!-- </view> -->
+			<text v-if="cartStatus" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num">你命有了</text>
       <!-- <text v-if="cartStatus" @click="cartAnimation.orderButton" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num"  @click="popUp">你命有了</text> -->
       
       <text class="text-muted" v-else @click="cartAnimation.orderButton" :data-status="cartStatus" :data-itemnum="item_num">购物车跟你脑子一样空空如也</text>
@@ -89,13 +95,13 @@
 import {debounce} from '../../utils/js/debounce'
 
 // Popup components
-import uniPopup from "@/components/uni-popup/uni-popup.vue"
+// import uniPopup from "@/components/uni-popup/uni-popup.vue"
 
 
 export default {
   components:{
     // uniPopup
-    uniPopup,
+    // uniPopup,
   },
   data() {
 		return {
@@ -131,9 +137,9 @@ export default {
       console.log(this.animate)
       console.log(this.item_num)
     },
-  popUp() {
-    this.$refs.popup.open()
-  }
+  // popUp() {
+  //   this.$refs.popup.open()
+  // }
 	}
 };
 </script>
