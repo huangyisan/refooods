@@ -330,7 +330,7 @@ export default {
 /* 控制body层动画 */
 @keyframes showPopupBody{
 /* 上滑呈现效果 */
-  0%{ transform: translateY()(0); }
+  0%{ transform: translateY(0); }
   100%{ transform: translateY(-100%);}
 }
 
