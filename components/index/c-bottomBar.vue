@@ -1,5 +1,8 @@
 <template>
   <view class="text-center d-flex position-fixed w-100 bb-color-1 position-fixed" style="height:90rpx; line-height: 90rpx;">
+    
+
+    
     <view class="text-center flex-1">
 			  <!-- <text v-if="cartStatus" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}"> -->
           <text v-if="cartStatus" class="shop-cart-items">
@@ -11,27 +14,26 @@
 			
 
     </view>
-    <view class="bottom-item-right flex-4" style="line-height: 90rpx">
-      <!-- <view  class="position-absolute bottom-90 right-0 left-0"> -->
-<!--      <uni-popup ref="popup" type="bottom">
-        <view  class="position-absolute bottom-90 right-0 left-0 bg-primary">
-          <view>底部弹出 Popup</view>
-          <view>底部弹出 Popup</view>
-          <view>底部弹出 Popup</view>
-          <view>底部弹出 Popup</view>
-          <view>底部弹出 Popup</view>
-          <view>底部弹出 Popup</view>
-          <view>底部弹出 Popup</view>
-        </view>
-        
-      </uni-popup> -->
-      <!-- </view> -->
+    <view class="bottom-item-right flex-4" style="line-height: 90rpx" @click="show">
+
 			<text v-if="cartStatus" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num">你命有了</text>
       <!-- <text v-if="cartStatus" @click="cartAnimation.orderButton" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num"  @click="popUp">你命有了</text> -->
       
       <text class="text-muted" v-else @click="cartAnimation.orderButton" :data-status="cartStatus" :data-itemnum="item_num">购物车跟你脑子一样空空如也</text>
 			
     </view>
+  <!-- 底部上拉弹出框 -->
+    <view class="_popup" :class="popupClass">
+       <view class="_mask" @click.stop="hide" @touchmove.stop.prevent = "forbidScroll">
+         <view class="_body" @click.stop="forbidPenetration">
+           <!-- <view @click="forbidPenetration"> -->
+           <view>
+             <text>内容</text>
+           </view>
+           
+         </view>
+       </view>
+     </view>
   </view>
 </template>
 
@@ -45,7 +47,6 @@
 
   function orderButton(event, ins) {
     // var scrollTimeout
-    
     // 先判断当前cartStatus状况,根据状况选择不同class选择器
     var cartStatus = event.currentTarget.dataset.status
     // a = ins.callMethod('setCartStatusTrue')
@@ -105,6 +106,7 @@ export default {
   },
   data() {
 		return {
+      popupClass:"none",
       item_num: 0,
       animate: false,
       debounceAnimate: null,
@@ -120,28 +122,46 @@ export default {
     },
 
 	methods: {
-	orderButton() {
-      // this.item_num += 1;
-      this.animate = true;
-      this.debounceAnimate()
+    // 绑定空函数，用来阻止穿透带来的滚动
+    forbidScroll() {},
+    // 绑定空函数，用来阻止穿透带来的其他非滚动效果
+    forbidPenetration() {},
+    
+    hide(){
+      console.log('this is hide')
+      this.popupClass = 'hide'
+      setTimeout(()=>{
+        this.popupClass = 'none'
+      },200)
     },
-  setCartStatusTrue() {
-      // console.log(this.isItem)
-      this.cartStatus = true
-      this.item_num += 1
-      this.animate = true;
-      setTimeout(() => {
-        this.animate = false;
-      },1000)
-      // this.debounceAnimate()
-      console.log(this.animate)
-      console.log(this.item_num)
+    
+    show(){
+      this.popupClass = 'show'
+      console.log('this is show')
+      
     },
-  // popUp() {
-  //   this.$refs.popup.open()
-  // }
-	}
-};
+    orderButton() {
+        // this.item_num += 1;
+        this.animate = true;
+        this.debounceAnimate()
+      },
+    setCartStatusTrue() {
+        // console.log(this.isItem)
+        this.cartStatus = true
+        this.item_num += 1
+        this.animate = true;
+        setTimeout(() => {
+          this.animate = false;
+        },1000)
+        // this.debounceAnimate()
+        console.log(this.animate)
+        console.log(this.item_num)
+      },
+    // popUp() {
+    //   this.$refs.popup.open()
+    // }
+    }
+  };
 </script>
 
 <style>
@@ -225,5 +245,102 @@ export default {
 	position: absolute;
 	right: 0;
   padding: 0 60rpx;
+}
+
+/* 弹出框效果 */
+
+._popup, ._mask {
+  position: fixed;
+  top:0;
+  height: 100%;
+  width: 100%;
+}
+
+._popup {
+  z-index: 2000;
+  display: none;
+  
+}
+._mask {
+  z-index: 2002;
+  background-color: rgba(255,0,0,0.5);
+}
+
+._popup ._body {
+  position: fixed;
+  bottom: -1035rpx;
+  /* bottom: 0; */
+  
+  /* 左右残留一点内边距 */
+  width: 100%;
+  /* left:4%; */
+  padding: 0, 4%;
+  border-radius: 20rpx 20rpx 0 0;
+  height: 1035rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  z-index: 2003;
+  
+}
+
+._popup.show {
+  display: block;
+}
+
+.show ._mask {
+  animation: showPopupMask 0.2s linear both;
+}
+
+.show ._body {
+  animation: showPopupBody 0.2s linear both;
+}
+
+._popup.hide {
+  display: block;
+}
+
+.hide ._mask {
+  animation: hidePopupMask 0.2s linear both;
+}
+
+.hide ._body {
+  animation: hidePopupBody 0.2s linear both;
+}
+
+._popup.none {
+  display: none;
+}
+
+/* 控制mask遮罩动画 */
+@keyframes showPopupMask{
+  /* 开始透明度为0 */
+  0%{ opacity: 0; }
+  /* 最终透明度为1 */
+  100%{ opacity: 1;}
+}
+
+@keyframes hidePopupMask{
+  /* 开始透明度为1 */
+  0%{ opacity: 1; }
+  /* 最终透明度为0 */
+  100%{ opacity: 0;}
+}
+
+/* 控制body层动画 */
+@keyframes showPopupBody{
+/* 上滑呈现效果 */
+  0%{ transform: translateY()(0); }
+  100%{ transform: translateY(-100%);}
+}
+
+@keyframes hidePopupBody{
+  /* 下滑退出效果 */
+  0%{ transform: translateY(-100%); }
+  100%{ transform: translateY(0); }
+}
+
+._popup .none {
+  display: none;
 }
 </style>
