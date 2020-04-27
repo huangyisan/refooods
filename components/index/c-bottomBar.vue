@@ -22,7 +22,10 @@
       <text class="text-muted" v-else @click="cartAnimation.orderButton" :data-status="cartStatus" :data-itemnum="item_num">购物车跟你脑子一样空空如也</text>
 			
     </view>
-    <c-popup :popupClass="popupClass"></c-popup>
+    <view style="position: fixed;">
+      <c-popup :popupClass="popupClass"></c-popup>
+    </view>
+    
     
   <!-- 底部上拉弹出框 -->
 <!--    <view class="_popup" :class="popupClass">
@@ -92,7 +95,7 @@
 </script>
 
 
-<script scrop>
+<script>
 
 
 import {debounce} from '../../utils/js/debounce'
@@ -110,7 +113,7 @@ export default {
   },
   data() {
 		return {
-      popupClass:"show",
+      popupClass:"none",
       item_num: 0,
       animate: false,
       debounceAnimate: null,
@@ -168,7 +171,7 @@ export default {
   };
 </script>
 
-<style>
+<style scoped>
 
 /* 无商品情况 */
 .shop-cart-noitem {

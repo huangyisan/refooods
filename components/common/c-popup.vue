@@ -15,7 +15,7 @@
     props:{
       popupClass: {
         type: String,
-        default: 'show'
+        default: 'none'
       }
     }
   }
