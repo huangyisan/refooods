@@ -23,21 +23,11 @@
 			
     </view>
     <view style="position: fixed;">
-      <c-popup :popupClass="popupClass" @hide='hide' @forbidPenetration='forbidPenetration' @forbidScroll='forbidScroll'></c-popup>
+      <c-popup :popupClass="popupClass" @hide='hide'></c-popup>
     </view>
     
     
-  <!-- 底部上拉弹出框 -->
-<!--    <view class="_popup" :class="popupClass">
-       <view class="_mask" @click.stop="hide" @touchmove.stop.prevent = "forbidScroll">
-         <view class="_body" @click.stop="forbidPenetration">
-           <view>
-             <text>内容</text>
-           </view>
-           
-         </view>
-       </view>
-     </view> -->
+
   </view>
   
 </template>

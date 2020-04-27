@@ -15,8 +15,14 @@
     props:{
       popupClass: {
         type: String,
-        default: 'none'
+        default: 'none',
       }
+    },
+    methods:{
+      // 阻止滚动
+      forbidScroll(){},
+      // 阻止点击穿透
+      forbidPenetration(){},
     }
   }
 </script>
@@ -36,7 +42,7 @@
 }
 ._mask {
   z-index: 2002;
-  background-color: rgba(255,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
 }
 
 ._popup ._body {
