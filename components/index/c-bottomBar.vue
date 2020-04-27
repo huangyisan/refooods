@@ -23,7 +23,7 @@
 			
     </view>
     <view style="position: fixed;">
-      <c-popup :popupClass="popupClass"></c-popup>
+      <c-popup :popupClass="popupClass" @hide='hide' @forbidPenetration='forbidPenetration' @forbidScroll='forbidScroll'></c-popup>
     </view>
     
     

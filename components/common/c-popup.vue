@@ -1,7 +1,7 @@
 <template>
   <view class="_popup" :class="popupClass">
-    <view class="_mask" @click.stop="hide" @touchmove.stop.prevent = "forbidScroll">
-      <view class="_body" @click.stop="forbidPenetration">
+    <view class="_mask" @click.stop="$emit('hide')" @touchmove.stop.prevent = "$emit('forbidScroll')">
+      <view class="_body" @click.stop="$emit('forbidPenetration')">
         <view>
           <text>内容</text>
         </view>
