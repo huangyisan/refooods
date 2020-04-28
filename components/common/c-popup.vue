@@ -2,9 +2,7 @@
   <view class="_popup" :class="popupClass">
     <view class="_mask" @click.stop="$emit('hide')" @touchmove.stop.prevent = "$emit('forbidScroll')">
       <view class="_body" @click.stop="$emit('forbidPenetration')">
-        <view>
-          <text>内容</text>
-        </view>
+        <slot />
       </view>
     </view>
   </view>
@@ -31,8 +29,9 @@
 ._popup, ._mask {
   position: fixed;
   top:0;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
+  bottom: 88rpx;
 }
 
 ._popup {
@@ -47,7 +46,7 @@
 
 ._popup ._body {
   position: fixed;
-  bottom: -1035rpx;
+  bottom: -412rpx;
   /* bottom: 0; */
   
   /* 左右残留一点内边距 */
@@ -55,7 +54,7 @@
   /* left:4%; */
   padding: 0, 4%;
   border-radius: 20rpx 20rpx 0 0;
-  height: 1035rpx;
+  height: 500rpx;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
