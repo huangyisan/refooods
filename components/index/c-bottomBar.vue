@@ -3,7 +3,7 @@
     
 
     
-    <view class="text-center flex-1">
+    <view class="text-center flex-1" style="z-index: 3000;">
 			  <!-- <text v-if="cartStatus" class="shop-cart-items" :class="{animated:animate, heartBeat: animate}"> -->
           <text v-if="cartStatus" class="shop-cart-items">
           <text class="red-point font-s">{{item_num}}</text>
@@ -14,7 +14,7 @@
 			
 
     </view>
-    <view class="bottom-item-right flex-4" style="line-height: 90rpx" @click="show">
+    <view class="bottom-item-right flex-4" style="line-height: 90rpx; z-index: 3000;" @click="show">
 
 			<text v-if="cartStatus" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num">你命有了</text>
       <!-- <text v-if="cartStatus" @click="cartAnimation.orderButton" class="order-btn text-muted bb-color-2" :data-status="cartStatus" :data-itemnum="item_num"  @click="popUp">你命有了</text> -->
@@ -185,7 +185,7 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 9;
+  z-index: 3000;
   top: 20rpx;
   right: 0;
   left: 20rpx;
@@ -213,7 +213,7 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 9;
+  z-index: 3000;
   top: 20rpx;
   right: 0;
   left: 20rpx;
