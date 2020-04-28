@@ -1,5 +1,6 @@
 <template>
-  <view class="text-center d-flex position-fixed w-100 bb-color-1 position-fixed" style="height:90rpx; line-height: 90rpx;">
+  <view>
+  <view class="text-center d-flex position-fixed w-100 bb-color-1 position-fixed" style="height:90rpx; line-height: 90rpx; z-index: 4000;">
     
 
     
@@ -22,12 +23,14 @@
       <text class="text-muted" v-else @click="cartAnimation.orderButton" :data-status="cartStatus" :data-itemnum="item_num">购物车跟你脑子一样空空如也</text>
 			
     </view>
-    <view style="position: fixed;">
-      <c-popup :popupClass="popupClass" @hide='hide'></c-popup>
-    </view>
+
     
     
 
+  </view>
+  <view style="position: fixed;">
+    <c-popup :popupClass="popupClass" @hide='hide'></c-popup>
+  </view>
   </view>
   
 </template>
